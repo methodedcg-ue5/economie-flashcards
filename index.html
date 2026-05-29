@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz économie DCG UE5 : 720 questions pour réviser les 18 chapitres</title>
-  <meta name="description" content="720 questions de quiz pour réviser et réussir l'économie contemporaine au DCG UE5. Entraînez-vous par thème ou chapitre, avec minuteur et résultats détaillés." />
-  <link rel="canonical" href="https://methodedcg-ue5.fr/quizz-revisions-economie/" />
-  <meta property="og:title" content="Quiz économie DCG UE5 : 720 questions pour réviser les 18 chapitres" />
-  <meta property="og:description" content="720 questions de quiz pour réviser et réussir l'économie contemporaine au DCG UE5. Entraînez-vous par thème ou chapitre, avec minuteur et résultats détaillés." />
-  <meta property="og:url" content="https://methodedcg-ue5.fr/quizz-revisions-economie/" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F51TDGR55K"></script>
   <script>
@@ -22,296 +9,1983 @@
     gtag('js', new Date());
     gtag('config', 'G-F51TDGR55K');
   </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards UE5 économie DCG : mémoriser les 297 définitions et mécanismes</title>
+<meta name="description" content="297 flashcards interactives pour mémoriser les définitions et appliquer la méthodologie pour réussir l'épreuve de l'UE5 DCG. Révisez chapitre par chapitre à votre rythme.">
+<link rel="canonical" href="https://methodedcg-ue5.fr/economie-flashcards/" />
+<meta property="og:title" content="Flashcards UE5 économie DCG : mémoriser les 297 définitions et mécanismes">
+<meta property="og:description" content="297 flashcards interactives pour mémoriser les définitions et appliquer la méthodologie pour réussir l'épreuve de l'UE5 DCG. Révisez chapitre par chapitre à votre rythme.">
+<meta property="og:url" content="https://methodedcg-ue5.fr/economie-flashcards/">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════
+   VARIABLES & RESET
+══════════════════════════════════════════════ */
+:root {
+  --bg:      #0f0f13;
+  --surface: #1a1a22;
+  --surface2:#22222e;
+  --border:  #2e2e3e;
+  --accent:  #c9a96e;
+  --text:    #e8e6f0;
+  --muted:   #888098;
+  --green:   #5ecb8a;
+  --red:     #e06b6b;
+  --purple:  #8b6fd4;
+  --radius:  16px;
+  --shadow:  0 8px 40px rgba(0,0,0,.5);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg); color: var(--text);
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════
+   HEADER / HUD
+══════════════════════════════════════════════ */
+header {
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface); flex-shrink: 0;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700; color: var(--accent);
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700; color: var(--accent);
+}
+.page-h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; color: var(--accent);
+  font-size: 1.15rem; line-height: 1.35;
+  text-align: left;
+  padding: 12px 20px 0;
+  flex-shrink: 0;
+}
+.page-h1.hidden { display: none; }
+.subtitle { font-size: .72rem; color: var(--muted); }
+.hud { margin-left: auto; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.hud-block {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 4px 11px; min-width: 52px;
+}
+.hud-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700; line-height: 1.1;
+}
+.hud-val.bump { animation: bump .25s ease; }
+.hud-lbl { font-size: .58rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.hearts { font-size: .95rem; letter-spacing: 1px; }
+.combo-block.hot .hud-val { color: #ff7043; text-shadow: 0 0 8px rgba(255,112,67,.5); }
+.joker-block { cursor: pointer; transition: border-color .15s; }
+.joker-block:hover { border-color: var(--purple); }
+.joker-block.empty { opacity: .38; cursor: not-allowed; }
+@keyframes bump { 0%,100%{transform:scale(1)} 50%{transform:scale(1.38)} }
+
+/* ══════════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════════ */
+.app { display: flex; flex: 1; overflow: hidden; height: calc(100vh - 57px); }
+
+/* ══════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════ */
+.sidebar {
+  width: 255px; min-width: 190px;
+  background: var(--surface); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 12px 0; flex-shrink: 0;
+}
+.sidebar-title {
+  font-size: .63rem; font-weight: 500; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 1.5px; padding: 0 16px 10px;
+}
+.chapter-btn {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 8px 16px;
+  background: none; border: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .76rem;
+  text-align: left; cursor: pointer; transition: all .15s;
+  border-left: 3px solid transparent;
+}
+.chapter-btn:hover { color: var(--text); background: var(--surface2); }
+.chapter-btn.active { color: var(--accent); background: var(--surface2); border-left-color: var(--accent); font-weight: 500; }
+.chapter-btn .cbadge {
+  margin-left: auto; font-size: .63rem;
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--muted); padding: 1px 6px; border-radius: 20px;
+}
+.chapter-btn.active .cbadge { background: rgba(201,169,110,.15); border-color: rgba(201,169,110,.3); color: var(--accent); }
+
+/* ══════════════════════════════════════════════
+   MAIN
+══════════════════════════════════════════════ */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+/* Mission */
+#missionBar {
+  padding: 6px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  font-size: .76rem; flex-shrink: 0;
+}
+.m-icon { font-size: .9rem; flex-shrink: 0; }
+.m-text { flex: 1; min-width: 130px; color: var(--muted); }
+.m-text strong { color: var(--text); font-weight: 500; }
+.m-prog { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.m-bar-bg { width: 75px; height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.m-bar-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width .4s ease, background .3s; }
+.m-lbl { font-size: .68rem; color: var(--muted); min-width: 30px; text-align: right; }
+#missionBar.success .m-bar-fill { background: var(--green); }
+#missionBar.success .m-text     { color: var(--green); }
+#missionBar.failed  .m-bar-fill { background: var(--red); }
+#missionBar.failed  .m-text     { color: var(--red); }
+#missionBar.close   .m-text     { color: var(--accent); }
+
+/* Timer */
+#timerWrap { height: 4px; background: var(--border); flex-shrink: 0; }
+#timerFill { height: 100%; background: var(--green); border-radius: 0 2px 2px 0; transition: background .3s; }
+#timerFill.warn   { background: #f5a623; }
+#timerFill.danger { background: var(--red); }
+
+/* Controls */
+.controls {
+  display: flex; align-items: center; gap: 9px; padding: 9px 20px;
+  border-bottom: 1px solid var(--border); background: var(--surface);
+  flex-wrap: wrap; flex-shrink: 0;
+}
+.chapter-title-bar {
+  font-family: 'Playfair Display', serif; font-size: .88rem; font-weight: 600;
+  color: var(--text); flex: 1; min-width: 140px;
+}
+.mode-toggle {
+  display: flex; background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 3px; gap: 2px;
+}
+.mode-btn {
+  padding: 4px 11px; border-radius: 6px; border: none;
+  background: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .72rem;
+  cursor: pointer; transition: all .15s;
+}
+.mode-btn.active { background: var(--accent); color: #0f0f13; font-weight: 500; }
+.btn {
+  padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text);
+  font-family: 'DM Sans', sans-serif; font-size: .74rem;
+  cursor: pointer; transition: all .15s;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ══════════════════════════════════════════════
+   CARD AREA
+══════════════════════════════════════════════ */
+.card-area {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 18px 16px 14px; overflow-y: auto; position: relative;
+}
+
+/* Bonus tag */
+.bonus-tag {
+  position: absolute; top: -11px; right: 14px;
+  background: var(--purple); color: #fff;
+  font-size: .68rem; font-weight: 600;
+  padding: 3px 9px; border-radius: 20px; z-index: 2;
+  animation: popIn .3s ease;
+}
+@keyframes popIn { 0%{transform:scale(0)} 70%{transform:scale(1.1)} 100%{transform:scale(1)} }
+
+/* Flashcard */
+.flashcard-scene {
+  width: 100%; max-width: 650px;
+  perspective: 1200px; cursor: pointer; user-select: none; position: relative;
+}
+.flashcard {
+  width: 100%; min-height: 230px;
+  transform-style: preserve-3d;
+  transition: transform .46s cubic-bezier(.4,0,.2,1);
+}
+.flashcard.flipped { transform: rotateY(180deg); }
+.flashcard.shake { animation: shake .36s ease; }
+@keyframes shake {
+  0%,100%{transform:rotateY(180deg) translateX(0)}
+  20%{transform:rotateY(180deg) translateX(-8px)}
+  40%{transform:rotateY(180deg) translateX(8px)}
+  60%{transform:rotateY(180deg) translateX(-6px)}
+  80%{transform:rotateY(180deg) translateX(6px)}
+}
+.card-face {
+  position: absolute; top:0; left:0; right:0; min-height: 230px;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  border-radius: var(--radius); padding: 34px 42px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  box-shadow: var(--shadow); transition: border-color .3s, box-shadow .3s;
+}
+.card-front { background: var(--surface); border: 1px solid var(--border); }
+.card-back  { background: var(--surface2); border: 1px solid rgba(201,169,110,.2); transform: rotateY(180deg); }
+.card-back.flash-green { border-color: var(--green)!important; box-shadow: 0 0 26px rgba(94,203,138,.25)!important; }
+.card-back.flash-red   { border-color: var(--red)!important;   box-shadow: 0 0 26px rgba(224,107,107,.25)!important; }
+.card-face:last-child { position: absolute; top: 0; left: 0; width: 100%; }
+.card-lbl {
+  font-size: .61rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--muted); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 5px;
+}
+.dot { width:4px; height:4px; border-radius:50%; background:var(--accent); display:inline-block; }
+.card-term { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+.card-hint { margin-top: 16px; font-size: .68rem; color: var(--muted); }
+.card-def  { font-size: .86rem; color: var(--text); line-height: 1.7; font-weight: 300; }
+
+/* Nav */
+.nav-row {
+  display: flex; align-items: center; gap: 13px;
+  margin-top: 16px; width: 100%; max-width: 650px; justify-content: center;
+}
+.nav-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  font-size: .95rem; cursor: pointer; transition: all .15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.nav-btn:disabled { opacity: .3; cursor: default; }
+.card-index { font-size: .78rem; color: var(--muted); min-width: 60px; text-align: center; }
+
+/* Feedback */
+.feedback-row {
+  display: flex; gap: 9px; margin-top: 13px;
+  width: 100%; max-width: 650px; justify-content: center;
+}
+.fb-btn {
+  flex: 1; max-width: 145px; padding: 10px;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: 'DM Sans', sans-serif; font-size: .78rem;
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--muted);
+}
+.fb-btn:hover { transform: translateY(-2px); }
+.fb-btn.wrong:hover, .fb-btn.wrong.active { background: rgba(224,107,107,.12); border-color: var(--red); color: var(--red); }
+.fb-btn.right:hover, .fb-btn.right.active { background: rgba(94,203,138,.12); border-color: var(--green); color: var(--green); }
+.joker-btn {
+  padding: 10px 14px; border-radius: 10px; border: 1px solid var(--purple);
+  background: rgba(139,111,212,.1); color: var(--purple);
+  font-family: 'DM Sans', sans-serif; font-size: .76rem;
+  cursor: pointer; transition: all .2s; white-space: nowrap;
+}
+.joker-btn:hover { background: rgba(139,111,212,.22); transform: translateY(-2px); }
+.joker-btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+
+/* Score footer */
+.score-summary {
+  display: flex; gap: 14px; padding: 6px 20px;
+  background: var(--surface); border-top: 1px solid var(--border);
+  align-items: center; justify-content: center;
+  font-size: .73rem; color: var(--muted); flex-wrap: wrap; flex-shrink: 0;
+}
+.score-item { display: flex; align-items: center; gap: 4px; }
+.sdot { width: 6px; height: 6px; border-radius: 50%; }
+
+/* ══════════════════════════════════════════════
+   LIST MODE
+══════════════════════════════════════════════ */
+.list-mode { padding: 18px 20px; overflow-y: auto; flex: 1; }
+.list-table { width: 100%; border-collapse: collapse; max-width: 860px; margin: 0 auto; }
+.list-table th { text-align:left; font-size:.65rem; text-transform:uppercase; letter-spacing:1.3px; color:var(--muted); padding:8px 12px; border-bottom:1px solid var(--border); font-weight:500; }
+.list-table td { padding:12px; border-bottom:1px solid var(--border); vertical-align:top; font-size:.82rem; }
+.list-table td:first-child { font-family:'Playfair Display',serif; font-weight:600; color:var(--accent); width:28%; font-size:.86rem; }
+.list-table td:last-child { color:var(--muted); line-height:1.6; }
+.list-table tr:hover td { background:var(--surface2); }
+
+/* ══════════════════════════════════════════════
+   OVERLAYS
+══════════════════════════════════════════════ */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,15,19,.93);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 300; opacity: 0; pointer-events: none; transition: opacity .32s;
+}
+.overlay.show { opacity: 1; pointer-events: all; }
+.ov-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 24px; padding: 40px 50px;
+  text-align: center; max-width: 420px; width: 92%;
+  box-shadow: var(--shadow);
+}
+.ov-card h2 { font-family:'Playfair Display',serif; font-size:1.65rem; margin-bottom:5px; }
+.ov-sub { font-size:.8rem; color:var(--muted); margin-bottom:24px; }
+.ov-stats { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px; }
+.ov-stat { background:var(--surface2); border-radius:12px; padding:13px; }
+.ov-stat .v { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--text); }
+.ov-stat .l { font-size:.65rem; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; }
+.ov-stat.g .v { color:var(--green); }
+.ov-stat.r .v { color:var(--red); }
+.ov-stat.a .v { color:var(--accent); }
+.ov-btn {
+  width:100%; padding:12px; border-radius:12px; border:none;
+  background:var(--accent); color:#0f0f13;
+  font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:500;
+  cursor:pointer; transition:opacity .15s;
+}
+.ov-btn:hover { opacity:.85; }
+#gameOver .ov-card { border-color: rgba(224,107,107,.35); }
+#gameOver h2 { color: var(--red); }
+.new-best {
+  display:inline-block; background:rgba(201,169,110,.15);
+  border:1px solid rgba(201,169,110,.4); color:var(--accent);
+  border-radius:20px; padding:3px 11px; font-size:.7rem; margin-bottom:14px;
+}
+
+/* ══════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════ */
+#toast {
+  position: fixed; top: 68px; left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 40px; padding: 8px 20px;
+  font-size: .82rem; font-weight: 500; color: var(--text);
+  opacity: 0; pointer-events: none; z-index: 400;
+  transition: opacity .2s, transform .2s; white-space: nowrap;
+}
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+#toast.green  { border-color:var(--green);  color:var(--green);  }
+#toast.red    { border-color:var(--red);    color:var(--red);    }
+#toast.gold   { border-color:var(--accent); color:var(--accent); }
+#toast.purple { border-color:var(--purple); color:var(--purple); }
+
+/* ══════════════════════════════════════════════
+   BADGE POPUP
+══════════════════════════════════════════════ */
+#badgePopup {
+  position: fixed; top:50%; left:50%;
+  transform: translate(-50%,-50%) scale(.65);
+  background: var(--surface); border: 2px solid var(--accent);
+  border-radius: 20px; padding: 20px 36px;
+  text-align:center; z-index:350;
+  opacity:0; pointer-events:none;
+  transition: opacity .26s, transform .26s;
+  box-shadow: 0 0 50px rgba(201,169,110,.25);
+}
+#badgePopup.show { opacity:1; transform:translate(-50%,-50%) scale(1); }
+#badgePopup.gcol { border-color:var(--green); box-shadow:0 0 50px rgba(94,203,138,.25); }
+.bp-emoji { font-size:2rem; display:block; margin-bottom:6px; }
+.bp-title { font-family:'Playfair Display',serif; font-size:1rem; color:var(--accent); }
+#badgePopup.gcol .bp-title { color:var(--green); }
+.bp-sub { font-size:.72rem; color:var(--muted); margin-top:3px; }
+
+/* Badges rack */
+#badgesRack {
+  position: fixed; bottom: 52px; right: 10px;
+  display: flex; flex-direction: column; gap: 5px;
+  z-index: 200; pointer-events: none;
+}
+.rack-badge {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 11px;
+  font-size: .72rem; color: var(--text);
+  animation: slideIn .28s ease;
+}
+@keyframes slideIn { from{transform:translateX(55px);opacity:0} to{transform:translateX(0);opacity:1} }
+
+/* ══════════════════════════════════════════════
+   PAGE D'ACCUEIL
+══════════════════════════════════════════════ */
+#homePage {
+  flex: 1; overflow-y: auto;
+  padding: 40px 24px 60px;
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+}
+#homePage.hidden { display: none; }
+
+/* Intro */
+.home-intro {
+  text-align: center; max-width: 620px;
+}
+.home-intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 700; color: var(--accent);
+  margin-bottom: 10px;
+}
+.home-intro p {
+  font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 8px;
+}
+
+/* Bloc "Comment jouer" */
+.how-to-play {
+  width: 100%; max-width: 680px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px 36px;
+}
+.htp-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 18px;
+}
+.htp-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.htp-list li {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: .84rem; color: var(--muted); line-height: 1.55;
+}
+.htp-list li span { font-size: 1rem; flex-shrink: 0; }
+.htp-list li strong { color: var(--text); font-weight: 500; }
+kbd {
+  display: inline-block;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 5px; padding: 1px 6px;
+  font-size: .72rem; font-family: monospace;
+  color: var(--muted); vertical-align: middle;
+}
+
+/* Titre section chapitres */
+.home-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; color: var(--text);
+  text-align: center; width: 100%;
+  position: relative;
+}
+.home-section-title::after {
+  content: '';
+  display: block;
+  width: 40px; height: 2px;
+  background: var(--accent);
+  border-radius: 99px;
+  margin: 8px auto 0;
+}
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px; width: 100%; max-width: 900px;
+}
+.ch-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 18px 20px;
+  cursor: pointer; transition: all .2s;
+  display: flex; flex-direction: column; gap: 8px;
+  text-align: left;
+}
+.ch-card:hover {
+  border-color: var(--accent);
+  background: var(--surface2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+.ch-card.selected {
+  border-color: var(--accent);
+  background: rgba(201,169,110,.08);
+}
+.ch-num {
+  font-size: .65rem; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--accent); font-weight: 500;
+}
+.ch-name {
+  font-family: 'Playfair Display', serif;
+  font-size: .95rem; font-weight: 600; color: var(--text); line-height: 1.3;
+}
+.ch-count {
+  font-size: .72rem; color: var(--muted);
+}
+
+/* Boutons de navigation */
+.btn-nav {
+  padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .74rem;
+  text-decoration: none; cursor: pointer; transition: all .15s;
+}
+.btn-nav:hover { border-color: var(--accent); color: var(--accent); }
+
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ══════════════════════════════════════════════
+   CHOIX DE MODE
+══════════════════════════════════════════════ */
+#modeSelect {
+  position: fixed; inset: 0;
+  background: rgba(15,15,19,.95);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 350; opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+#modeSelect.show { opacity: 1; pointer-events: all; }
+.mode-select-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 24px; padding: 36px 44px;
+  text-align: center; max-width: 460px; width: 92%;
+  box-shadow: var(--shadow);
+}
+.mode-select-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; color: var(--accent); margin-bottom: 5px;
+}
+.ms-sub { font-size: .8rem; color: var(--muted); margin-bottom: 26px; }
+.mode-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 18px; }
+.ms-btn {
+  padding: 18px 14px; border-radius: 14px;
+  border: 2px solid var(--border); background: var(--surface2);
+  cursor: pointer; transition: all .2s; text-align: left;
+}
+.ms-btn:hover { border-color: var(--accent); transform: translateY(-2px); }
+.ms-btn.selected { border-color: var(--accent); background: rgba(201,169,110,.1); }
+.ms-btn .ms-icon  { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+.ms-btn .ms-title { font-family: 'Playfair Display', serif; font-size: .95rem; color: var(--text); display: block; margin-bottom: 4px; }
+.ms-btn .ms-desc  { font-size: .7rem; color: var(--muted); line-height: 1.5; display: block; }
+.ms-btn.selected .ms-title { color: var(--accent); }
+.ms-launch {
+  width: 100%; padding: 12px; border-radius: 12px; border: none;
+  background: var(--accent); color: #0f0f13;
+  font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500;
+  cursor: pointer; transition: opacity .15s; margin-bottom: 10px;
+}
+.ms-launch:hover { opacity: .85; }
+.ms-back {
+  background: none; border: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .76rem;
+  cursor: pointer; transition: color .15s;
+}
+.ms-back:hover { color: var(--text); }
+
+/* ══════════════════════════════════════════════
+   BARRE DE PROGRESSION SESSION
+══════════════════════════════════════════════ */
+#sessionProgress {
+  padding: 6px 20px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  font-size: .73rem;
+}
+.sp-label { color: var(--muted); white-space: nowrap; }
+.sp-bar-bg { flex: 1; height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.sp-bar-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width .4s ease, background .3s; }
+.sp-bar-fill.good   { background: var(--green); }
+.sp-bar-fill.medium { background: #f5a623; }
+.sp-bar-fill.bad    { background: var(--red); }
+.sp-pct { color: var(--accent); font-weight: 500; min-width: 34px; text-align: right; }
+.sp-mode-tag {
+  font-size: .63rem; padding: 2px 7px; border-radius: 20px;
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--muted); white-space: nowrap;
+}
+.sp-mode-tag.rapide { border-color: var(--purple); color: var(--purple); }
+
+/* ══════════════════════════════════════════════
+   FEEDBACK VISUEL — AJOUTS GAME FEEL
+══════════════════════════════════════════════ */
+
+/* Carte — bonne réponse */
+.card-back.correct {
+  border-color: var(--green) !important;
+  box-shadow: 0 0 40px rgba(94,203,138,.4), 0 0 0 2px var(--green) !important;
+  animation: cardCorrect .4s ease;
+}
+@keyframes cardCorrect {
+  0%   { transform: rotateY(180deg) scale(1); }
+  40%  { transform: rotateY(180deg) scale(1.04); }
+  100% { transform: rotateY(180deg) scale(1); }
+}
+
+/* Carte — mauvaise réponse (shake renforcé) */
+.card-back.wrong-answer {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 40px rgba(224,107,107,.4), 0 0 0 2px var(--red) !important;
+}
+.flashcard.shake-strong {
+  animation: shakeStrong .42s ease;
+}
+@keyframes shakeStrong {
+  0%,100% { transform: rotateY(180deg) translateX(0); }
+  15%     { transform: rotateY(180deg) translateX(-12px); }
+  30%     { transform: rotateY(180deg) translateX(12px); }
+  45%     { transform: rotateY(180deg) translateX(-9px); }
+  60%     { transform: rotateY(180deg) translateX(9px); }
+  75%     { transform: rotateY(180deg) translateX(-5px); }
+  90%     { transform: rotateY(180deg) translateX(5px); }
+}
+
+/* Flash rouge global (perte de vie) */
+#lifeFlash {
+  position: fixed; inset: 0;
+  background: rgba(224,107,107,.15);
+  pointer-events: none; z-index: 500;
+  opacity: 0; transition: opacity .08s;
+}
+#lifeFlash.show { opacity: 1; }
+
+/* Combo — animation scale quand il monte */
+#comboDisplay.combo-up {
+  animation: comboUp .3s ease;
+}
+@keyframes comboUp {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.55); color: #ff7043; }
+  100% { transform: scale(1); }
+}
+
+/* Combo banner (🔥 COMBO ×5 !) */
+#comboBanner {
+  position: fixed; top: 130px; left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: linear-gradient(135deg, #ff7043, #ff5722);
+  color: #fff; font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  padding: 10px 28px; border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(255,112,67,.5);
+  opacity: 0; pointer-events: none; z-index: 450;
+  transition: opacity .22s, transform .22s;
+  white-space: nowrap;
+}
+#comboBanner.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Timer pulse quand < 3s */
+#timerFill.pulse {
+  animation: timerPulse .6s ease infinite;
+}
+@keyframes timerPulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: .35; }
+}
+
+/* Cœur qui disparaît */
+.heart-lost {
+  display: inline-block;
+  animation: heartLost .4s ease forwards;
+}
+@keyframes heartLost {
+  0%   { transform: scale(1); opacity: 1; }
+  40%  { transform: scale(1.4); opacity: .8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* Écran de fin — glow vert si ≥ 90% */
+#sessionEnd .ov-card.end-mastered {
+  border-color: var(--green);
+  box-shadow: 0 0 50px rgba(94,203,138,.2);
+}
+#sessionEnd .ov-card.end-mastered h2 { color: var(--green); }
+
+/* Écran de fin — message incitatif < 50% */
+#endEncouragement {
+  font-size: .8rem; color: var(--red);
+  margin: -14px 0 14px;
+  font-style: italic;
+}
+
+/* ══════════════════════════════════════════════
+   MODE EXAMEN
+══════════════════════════════════════════════ */
+.exam-launch-wrap {
+  width: 100%; display: flex; justify-content: center; margin-top: -22px;
+}
+.exam-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 12px;
+  border: 1px solid var(--accent);
+  background: rgba(201,169,110,.1); color: var(--accent);
+  font-family: 'DM Sans', sans-serif; font-size: .86rem; font-weight: 500;
+  cursor: pointer; transition: all .2s;
+}
+.exam-btn:hover { background: rgba(201,169,110,.22); transform: translateY(-2px); }
+
+#examModal {
+  position: fixed; inset: 0;
+  background: rgba(15,15,19,.95);
+  display: flex; align-items: flex-start; justify-content: center;
+  z-index: 360; opacity: 0; pointer-events: none; transition: opacity .3s;
+  overflow-y: auto; padding: 40px 16px;
+}
+#examModal.show { opacity: 1; pointer-events: all; }
+.exam-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 24px; padding: 32px 36px;
+  max-width: 540px; width: 100%;
+  box-shadow: var(--shadow);
+  margin: auto 0;
+}
+.exam-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; color: var(--accent); margin-bottom: 5px;
+}
+.exam-sub { font-size: .8rem; color: var(--muted); margin-bottom: 22px; }
+.exam-all {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+  cursor: pointer; margin-bottom: 14px; transition: border-color .15s;
+}
+.exam-all:hover { border-color: var(--accent); }
+.exam-all .exam-all-lbl {
+  font-family: 'Playfair Display', serif; font-size: .92rem; color: var(--text); font-weight: 600;
+}
+.exam-themes { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
+.exam-theme {
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 14px; border-radius: 12px;
+  background: var(--surface2); border: 1px solid var(--border);
+  cursor: pointer; transition: all .15s;
+}
+.exam-theme:hover { border-color: var(--accent); }
+.exam-theme.selected { background: rgba(201,169,110,.08); }
+.exam-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.exam-theme-info { flex: 1; min-width: 0; }
+.exam-theme-name {
+  font-family: 'DM Sans', sans-serif; font-size: .82rem; color: var(--text);
+  font-weight: 500; line-height: 1.3;
+}
+.exam-theme-meta { font-size: .68rem; color: var(--muted); margin-top: 2px; }
+.exam-check {
+  width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0;
+  border: 2px solid var(--border); background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; color: #0f0f13; transition: all .15s;
+}
+.exam-theme.selected .exam-check,
+.exam-all.selected .exam-check { background: var(--accent); border-color: var(--accent); }
+.exam-counter {
+  text-align: center; font-size: .82rem; color: var(--muted);
+  margin-bottom: 18px;
+}
+.exam-counter strong { color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+.exam-mode-pick {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px;
+}
+.exam-mode-opt {
+  padding: 14px 12px; border-radius: 12px;
+  border: 2px solid var(--border); background: var(--surface2);
+  cursor: pointer; transition: all .2s; text-align: left;
+}
+.exam-mode-opt:hover { border-color: var(--accent); }
+.exam-mode-opt.selected { border-color: var(--accent); background: rgba(201,169,110,.1); }
+.exam-mode-opt .emo { font-size: 1.3rem; display: block; margin-bottom: 5px; }
+.exam-mode-opt .ttl { font-family: 'Playfair Display', serif; font-size: .88rem; color: var(--text); display: block; }
+.exam-mode-opt.selected .ttl { color: var(--accent); }
+.exam-mode-opt .dsc { font-size: .68rem; color: var(--muted); display: block; margin-top: 3px; }
+.exam-go {
+  width: 100%; padding: 13px; border-radius: 12px; border: none;
+  background: var(--accent); color: #0f0f13;
+  font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500;
+  cursor: pointer; transition: opacity .15s; margin-bottom: 10px;
+}
+.exam-go:hover { opacity: .85; }
+.exam-go:disabled { opacity: .35; cursor: not-allowed; }
+.exam-cancel {
+  width: 100%; background: none; border: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .78rem;
+  cursor: pointer; transition: color .15s;
+}
+.exam-cancel:hover { color: var(--text); }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 640px)
+══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* Sidebar masquée */
+  .sidebar { display: none; }
+
+  /* Header HUD compact */
+  header { padding: 8px 12px; gap: 8px; }
+  .hud { gap: 4px; }
+  .hud-block { padding: 3px 7px; min-width: 40px; }
+  .hud-val { font-size: 1rem; }
+  .hud-lbl { font-size: .52rem; }
+  header h1 { font-size: .95rem; }
+  .subtitle { display: none; }
+
+  /* Barre de contrôles */
+  .controls { padding: 7px 12px; gap: 6px; }
+  .chapter-title-bar { font-size: .78rem; min-width: 0; }
+  .btn { padding: 5px 9px; font-size: .7rem; }
+  .btn-nav { padding: 5px 9px; font-size: .7rem; }
+
+  /* Carte */
+  .card-term { font-size: 1.2rem; }
+  .card-face { padding: 22px 16px; }
+  .card-def  { font-size: .82rem; }
+
+  /* Mission bar */
+  #missionBar { padding: 5px 12px; font-size: .72rem; }
+  .m-bar-bg { width: 55px; }
+
+  /* Session progress */
+  #sessionProgress { padding: 5px 12px; font-size: .68rem; }
+
+  /* Score footer */
+  .score-summary { padding: 5px 12px; font-size: .68rem; gap: 10px; }
+
+  /* Page d'accueil */
+  #homePage { padding: 24px 14px 40px; gap: 28px; }
+  .home-intro h2 { font-size: 1.5rem; }
+  /* Bloc "Comment jouer" — version mobile compacte */
+  .how-to-play {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+  .htp-title { font-size: .88rem; margin-bottom: 12px; }
+  .htp-list { gap: 9px; }
+  .htp-list li {
+    font-size: .76rem;
+    gap: 7px;
+    line-height: 1.45;
+    align-items: flex-start;
+  }
+  .htp-list li span { font-size: .88rem; margin-top: 1px; }
+
+  /* Éléments masqués sur mobile (raccourcis clavier, détails desktop) */
+  .htp-desktop { display: none !important; }
+
+  /* Grille chapitres */
+  .chapters-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ch-card { padding: 14px 14px; }
+  .ch-name { font-size: .85rem; }
+
+  /* Overlays */
+  .ov-card { padding: 28px 22px; }
+  .ov-card h2 { font-size: 1.35rem; }
+  .ov-stats { gap: 8px; }
+  .ov-stat { padding: 10px; }
+  .ov-stat .v { font-size: 1.5rem; }
+
+  /* Sélecteur de mode */
+  .mode-select-card { padding: 26px 20px; }
+  .mode-btns { grid-template-columns: 1fr; }
+
+  /* Mode Examen */
+  .exam-card { padding: 24px 18px; border-radius: 18px; }
+  .exam-card h2 { font-size: 1.25rem; }
+  #examModal { padding: 24px 10px; }
+
+  /* Feedback buttons */
+  .fb-btn { font-size: .72rem; padding: 8px; }
+  .joker-btn { font-size: .7rem; padding: 8px 10px; }
+}
+</style>
 </head>
 <body>
 
-<!-- ══ ÉCRAN 0 · THÈMES ══════════════════════════ -->
-<div id="s-home" class="screen active">
-  <header class="site-header">
-    <div class="brand">
-      <a href="index.html" class="brand-name">DCG · UE5</a>
-      <div class="header-sep"></div>
-      <span class="header-title">Quiz</span>
+<!-- ══ CHOIX DE MODE ══ -->
+<div id="modeSelect">
+  <div class="mode-select-card">
+    <h2 id="msChapterName">Chapitre</h2>
+    <p class="ms-sub">Choisis ton mode de révision pour cette session</p>
+    <div class="mode-btns">
+      <button class="ms-btn selected" id="msBtnRevision" onclick="selectGameMode('revision')">
+        <span class="ms-icon">🧠</span>
+        <span class="ms-title">Mode Révision</span>
+        <span class="ms-desc">Timer long · Tu contrôles le rythme · Idéal pour apprendre</span>
+      </button>
+      <button class="ms-btn" id="msBtnRapide" onclick="selectGameMode('rapide')">
+        <span class="ms-icon">⚡</span>
+        <span class="ms-title">Mode Rapide</span>
+        <span class="ms-desc">Timer court · Enchaînement auto · Pour se tester</span>
+      </button>
     </div>
-    <p class="site-matiere" id="site-matiere">…</p>
-    <a href="https://methodedcg-ue5.fr" class="back-btn">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 16 7 10 13 4"/></svg>
-      Accueil
-    </a>
-  </header>
-  <main class="home-body">
-    <div class="home-intro">
-      <h1 class="home-title">Révisez par<br><span class="title-em">thème</span></h1>
-      <p class="home-desc">Entraînez-vous sur les 720 questions du programme, organisées en 18 chapitres et 7 thèmes pour réussir votre UE5 d'économie du DCG ! Un mode révision est également disponible.</p>
-      <p class="home-kpi" id="home-kpi">720 questions · 18 chapitres · 7 thèmes</p>
+    <button class="ms-launch" onclick="launchWithMode()">▶ Lancer la session</button>
+    <button class="ms-back" onclick="cancelModeSelect()">← Retour aux chapitres</button>
+  </div>
+</div>
+
+<!-- ══ MODE EXAMEN ══ -->
+<div id="examModal">
+  <div class="exam-card">
+    <h2>🎓 Mode Examen</h2>
+    <p class="exam-sub">Compose ton périmètre de révision : coche un ou plusieurs thèmes, choisis ton rythme, puis lance la session sur l'ensemble des cartes sélectionnées mélangées.</p>
+
+    <div class="exam-all" id="examAll" onclick="toggleExamAll()">
+      <span class="exam-check" id="examAllCheck">✓</span>
+      <span class="exam-all-lbl">Tous les chapitres</span>
     </div>
-    <!-- Bouton Mode Révision Examen -->
-    <div class="exam-mode-wrap">
-      <button class="btn-exam-mode" id="btn-exam-mode">
-        <span class="exam-mode-icon">🎓</span>
-        <div class="exam-mode-text">
-          <span class="exam-mode-title">Mode révision examen</span>
-          <span class="exam-mode-sub">Mélangez les questions de plusieurs chapitres</span>
-        </div>
-        <span class="exam-mode-arrow">›</span>
+
+    <div class="exam-themes" id="examThemes"></div>
+
+    <div class="exam-counter">
+      <strong id="examCount">0</strong> carte(s) sélectionnée(s)
+    </div>
+
+    <div class="exam-mode-pick">
+      <button class="exam-mode-opt selected" id="examModeRevision" onclick="setExamMode('revision')">
+        <span class="emo">🧠</span>
+        <span class="ttl">Révision</span>
+        <span class="dsc">8 s par carte · pour apprendre</span>
+      </button>
+      <button class="exam-mode-opt" id="examModeRapide" onclick="setExamMode('rapide')">
+        <span class="emo">⚡</span>
+        <span class="ttl">Rapide</span>
+        <span class="dsc">5 s par carte · pour se tester</span>
       </button>
     </div>
 
-    <div class="themes-wrap" id="themes-wrap"></div>
-  </main>
-  <footer class="site-footer"><span id="footer-info">Chargement…</span></footer>
-</div>
-
-<!-- ══ ÉCRAN 5 · RÉVISION EXAMEN ════════════════ -->
-<div id="s-revision" class="screen">
-  <div class="nav-bar">
-    <button class="btn-back" id="back-home-rev">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 16 7 10 13 4"/></svg>
-      Accueil
-    </button>
-    <span class="nav-label">Mode révision examen</span>
-    <span style="width:80px"></span>
-  </div>
-  <main class="revision-body">
-
-    <!-- Onglets de sélection -->
-    <div class="rev-tabs" id="rev-tabs">
-      <button class="rev-tab active" data-tab="all">Tous les chapitres</button>
-      <button class="rev-tab" data-tab="theme">Par thème</button>
-    </div>
-
-    <!-- Panneau : Tous les chapitres -->
-    <div class="rev-panel active" id="rev-panel-all">
-      <div class="rev-all-info" id="rev-all-info">
-        <span class="rev-all-icon">📚</span>
-        <p>Les 18 chapitres mélangés — <strong id="rev-all-total">720</strong> questions disponibles</p>
-      </div>
-    </div>
-
-    <!-- Panneau : Par thème -->
-    <div class="rev-panel" id="rev-panel-theme">
-      <p class="rev-hint">Choisissez un ou plusieurs thèmes.</p>
-      <div class="rev-theme-list" id="rev-theme-list"></div>
-    </div>
-
-    <!-- Config commune -->
-    <div class="rev-config-card">
-      <fieldset class="cfg-field">
-        <legend class="cfg-legend">Nombre de questions</legend>
-        <div class="count-row" id="rev-count-row">
-          <label class="count-opt"><input type="radio" name="rev-qcount" value="10"/>
-            <span class="count-face"><span class="count-n">10</span><span class="count-hint">~5 min</span></span>
-          </label>
-          <label class="count-opt"><input type="radio" name="rev-qcount" value="20"/>
-            <span class="count-face"><span class="count-n">20</span><span class="count-hint">~10 min</span></span>
-          </label>
-          <label class="count-opt"><input type="radio" name="rev-qcount" value="40" checked/>
-            <span class="count-face"><span class="count-n">40</span><span class="count-hint">Complet</span></span>
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset class="cfg-field">
-        <legend class="cfg-legend">Minuteur adaptatif</legend>
-        <label class="toggle-label">
-          <span class="toggle-wrap">
-            <input type="checkbox" id="rev-timer-toggle" checked/>
-            <span class="toggle-pill"><span class="toggle-knob"></span></span>
-          </span>
-          <span class="toggle-text">VF 8 s · QCU 15 s · QCM 20 s</span>
-        </label>
-      </fieldset>
-
-      <p class="rev-pool-info" id="rev-pool-info"></p>
-
-      <button class="btn-launch" id="btn-launch-rev" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-        Démarrer la révision
-      </button>
-    </div>
-  </main>
-</div>
-
-<!-- ══ ÉCRAN 1 · CHAPITRES ═══════════════════════ -->
-<div id="s-chapters" class="screen">
-  <div class="nav-bar">
-    <button class="btn-back" id="back-home">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 16 7 10 13 4"/></svg>
-      Thèmes
-    </button>
-    <span class="nav-label" id="nav-theme-label"></span>
-    <span style="width:80px"></span>
-  </div>
-  <main class="chapters-body">
-    <div class="chapters-hero">
-      <span class="theme-emoji" id="ch-emoji"></span>
-      <div>
-        <h2 class="chapters-title" id="ch-title"></h2>
-        <p class="chapters-sub">Sélectionnez un chapitre pour commencer</p>
-      </div>
-    </div>
-    <ul class="ch-list" id="ch-list"></ul>
-  </main>
-</div>
-
-<!-- ══ ÉCRAN 2 · CONFIG ══════════════════════════ -->
-<div id="s-config" class="screen">
-  <div class="nav-bar">
-    <button class="btn-back" id="back-chapters">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 16 7 10 13 4"/></svg>
-      Chapitres
-    </button>
-    <span class="nav-label" id="nav-chap-label"></span>
-    <span style="width:80px"></span>
-  </div>
-  <main class="config-body">
-    <div class="config-card">
-      <div class="cfg-header">
-        <span class="cfg-emoji" id="cfg-emoji"></span>
-        <div>
-          <h2 class="cfg-title" id="cfg-title"></h2>
-          <p class="cfg-sub" id="cfg-sub"></p>
-        </div>
-      </div>
-
-      <fieldset class="cfg-field">
-        <legend class="cfg-legend">Nombre de questions</legend>
-        <div class="count-row" id="count-row">
-          <label class="count-opt"><input type="radio" name="qcount" value="10"/>
-            <span class="count-face"><span class="count-n">10</span><span class="count-hint">~5 min</span></span>
-          </label>
-          <label class="count-opt"><input type="radio" name="qcount" value="20"/>
-            <span class="count-face"><span class="count-n">20</span><span class="count-hint">~10 min</span></span>
-          </label>
-          <label class="count-opt"><input type="radio" name="qcount" value="40" checked/>
-            <span class="count-face"><span class="count-n">40</span><span class="count-hint">Complet</span></span>
-          </label>
-        </div>
-        <p class="count-warn hidden" id="count-warn"></p>
-      </fieldset>
-
-      <fieldset class="cfg-field">
-        <legend class="cfg-legend">Minuteur adaptatif</legend>
-        <label class="toggle-label">
-          <span class="toggle-wrap">
-            <input type="checkbox" id="timer-toggle" checked/>
-            <span class="toggle-pill"><span class="toggle-knob"></span></span>
-          </span>
-          <span class="toggle-text">VF 8 s · QCU 15 s · QCM 20 s</span>
-        </label>
-      </fieldset>
-
-      <button class="btn-launch" id="btn-launch">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-        Démarrer le quiz
-      </button>
-    </div>
-  </main>
-</div>
-
-<!-- ══ ÉCRAN 3 · QUIZ ════════════════════════════ -->
-<div id="s-quiz" class="screen">
-  <div class="quiz-topbar">
-    <button class="btn-back" id="btn-quit">
-      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 16 7 10 13 4"/></svg>
-      Quitter
-    </button>
-    <div class="qbar-center">
-      <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-      <span class="progress-text" id="prog-text">1 / 1</span>
-    </div>
-    <div class="score-chip" id="score-chip">0 pt</div>
-  </div>
-
-  <!-- Timer : barre horizontale sous la topbar -->
-  <div class="timer-bar-wrap" id="timer-bar-wrap">
-    <div class="timer-bar" id="timer-bar"></div>
-    <span class="timer-label" id="timer-label">30</span>
-  </div>
-
-  <div class="quiz-stage">
-    <div class="card-shell">
-      <div class="card-body" id="card-body">
-        <div class="card-meta">
-          <span class="type-badge" id="type-badge">QCU</span>
-          <span class="q-index" id="q-index">Q 1</span>
-          <!-- Indicateur score dynamique -->
-          <span class="score-delta" id="score-delta"></span>
-        </div>
-        <p class="q-statement" id="q-statement"></p>
-        <p class="q-hint" id="q-hint"></p>
-      </div>
-    </div>
-
-    <div class="opts-zone">
-      <div class="opts-list" id="opts-list"></div>
-      <div class="feedback-box" id="feedback-box"></div>
-      <div class="act-row">
-        <button class="btn-confirm" id="btn-confirm" disabled>Valider</button>
-        <button class="btn-forward hidden" id="btn-forward">Suivant →</button>
-      </div>
-    </div>
+    <button class="exam-go" id="examGo" onclick="launchExam()">▶ Lancer la session</button>
+    <button class="exam-cancel" onclick="closeExamModal()">← Retour aux chapitres</button>
   </div>
 </div>
 
-<!-- ══ ÉCRAN 4 · RÉSULTATS ═══════════════════════ -->
-<div id="s-results" class="screen">
-  <div class="results-scene">
-    <div class="results-card">
+<!-- ══ PAGE D'ACCUEIL ══ -->
+<div id="homePage">
 
-      <!-- En-tête -->
-      <div class="res-header">
-        <p class="res-label" id="res-label"></p>
-        <div class="res-emoji" id="res-emoji">🎯</div>
+  <div class="home-intro">
+    <div style="margin-bottom:16px">
+      <a href="https://methodedcg-ue5.fr/" class="btn-nav">🏠 Accueil</a>
+    </div>
+    <h2>Flashcards Économie DCG</h2>
+    <p>Révise les 297 définitions des 18 chapitres d'économie du DCG sous forme de jeu.</p>
+  </div>
+
+  <!-- Bloc "Comment jouer" -->
+  <div class="how-to-play">
+    <div class="htp-title">Comment jouer</div>
+    <ul class="htp-list">
+      <li><span>⏱️</span> <strong>Timer</strong> — chaque carte a un temps limité. Temps écoulé = réponse fausse.</li>
+      <li><span>❤️</span> <strong>3 vies</strong> — chaque erreur enlève une vie. À zéro → Game Over.</li>
+      <li><span>🔥</span> <strong>Combo &amp; Score</strong> — +10 pts par bonne réponse, +5 si rapide. Le combo booste tes points.</li>
+      <li><span>🃏</span> <strong>2 Jokers</strong> — passe une carte sans pénalité.</li>
+      <li><span>🎯</span> <strong>Mission</strong> — une mission aléatoire par session : précision, combo, score ou rapidité.</li>
+      <li><span>🎁</span> <strong>Bonus ×2</strong> — 15% de chance qu'une carte soit bonus : bonne réponse = double points !</li>
+      <li class="htp-desktop"><span>⌨️</span> <strong>Clavier</strong> — <kbd>Espace</kbd> retourner · <kbd>1</kbd>/<kbd>↑</kbd> J'ai répondu · <kbd>2</kbd>/<kbd>↓</kbd> À revoir · <kbd>J</kbd> Joker</li>
+    </ul>
+  </div>
+
+  <!-- Grille chapitres -->
+  <div class="home-section-title">Choisis un chapitre pour commencer</div>
+  <div class="exam-launch-wrap">
+    <button class="exam-btn" onclick="openExamModal()">🎓 Mode Examen</button>
+  </div>
+  <div class="chapters-grid" id="chaptersGrid"></div>
+
+</div>
+
+<!-- HUD (masqué jusqu'au démarrage du jeu) -->
+<header id="gameHeader" style="display:none">
+  <span class="header-title">Flashcards Économie</span>
+  <span class="subtitle">DCG</span>
+  <div class="hud">
+    <div class="hud-block">
+      <div class="hearts" id="heartsDisplay">❤️❤️❤️</div>
+      <div class="hud-lbl">Vies</div>
+    </div>
+    <div class="hud-block">
+      <div class="hud-val" id="scoreDisplay">0</div>
+      <div class="hud-lbl">Score</div>
+    </div>
+    <div class="hud-block combo-block" id="comboBlock">
+      <div class="hud-val" id="comboDisplay">×0</div>
+      <div class="hud-lbl">🔥 Combo</div>
+    </div>
+    <div class="hud-block joker-block" id="jokerHud" onclick="useJoker()" title="J — Utiliser un joker">
+      <div class="hud-val" id="jokerDisplay">🃏×2</div>
+      <div class="hud-lbl">Joker</div>
+    </div>
+  </div>
+</header>
+
+<h1 class="page-h1 hidden">Réviser les 297 définitions des 18 chapitres de l'UE5 économie du DCG sous forme de jeu</h1>
+
+<div class="app" id="gameApp" style="display:none">
+  <nav class="sidebar">
+    <div class="sidebar-title">Chapitres</div>
+    <div id="chapterList"></div>
+  </nav>
+
+  <div class="main">
+    <!-- Mission -->
+    <div id="missionBar">
+      <span class="m-icon" id="missionIcon">🎯</span>
+      <div class="m-text" id="missionText">Chargement…</div>
+      <div class="m-prog">
+        <div class="m-bar-bg"><div class="m-bar-fill" id="missionFill" style="width:0%"></div></div>
+        <div class="m-lbl" id="missionLabel">0/0</div>
       </div>
+    </div>
 
-      <!-- Anneau score animé -->
-      <div class="ring-wrap">
-        <svg class="ring-svg" viewBox="0 0 160 160">
-          <circle class="ring-bg" cx="80" cy="80" r="64"/>
-          <circle class="ring-bar" id="ring-bar" cx="80" cy="80" r="64"/>
-        </svg>
-        <div class="ring-center">
-          <span class="ring-score" id="ring-score">0</span>
-          <span class="ring-total" id="ring-total">/0</span>
+    <!-- Session Progress -->
+    <div id="sessionProgress">
+      <span class="sp-label" id="spLabel">0 / 0</span>
+      <div class="sp-bar-bg"><div class="sp-bar-fill" id="spFill" style="width:0%"></div></div>
+      <span class="sp-pct" id="spPct">—</span>
+      <span class="sp-mode-tag" id="spModeTag">🧠 Révision</span>
+    </div>
+
+    <!-- Timer -->
+    <div id="timerWrap"><div id="timerFill" style="width:100%"></div></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="chapter-title-bar" id="chapterTitleBar">—</div>
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="modeCard" onclick="setMode('card')">Cartes</button>
+        <button class="mode-btn"        id="modeList" onclick="setMode('list')">Liste</button>
+      </div>
+      <a href="https://methodedcg-ue5.fr/" id="backSiteBtn" class="btn-nav" title="Retour au site">🏠 Site</a>
+      <button id="backHomeBtn" class="btn-nav" onclick="goHome()">← Accueil</button>
+      <button class="btn" onclick="shuffleCards()">🔀 Mélanger</button>
+      <button class="btn" onclick="resetChapter()">↺ Restart</button>
+    </div>
+
+    <!-- Card -->
+    <div class="card-area" id="cardMode">
+      <div class="flashcard-scene" id="scene" onclick="flipCard()">
+        <div class="flashcard" id="flashcard">
+          <div class="card-face card-front">
+            <div class="card-lbl"><span class="dot"></span> Terme</div>
+            <div class="card-term" id="cardTerm">—</div>
+            <div class="card-hint" id="cardHint">Cliquez pour révéler la définition</div>
+          </div>
+          <div class="card-face card-back" id="cardBack">
+            <div class="card-lbl"><span class="dot"></span> Définition</div>
+            <div class="card-def" id="cardDef">—</div>
+          </div>
         </div>
       </div>
-
-      <p class="res-pct" id="res-pct">–</p>
-
-      <!-- Message adaptatif + note -->
-      <div class="res-message-block" id="res-message-block">
-        <p class="res-mention" id="res-mention"></p>
-        <p class="res-encouragement" id="res-encouragement"></p>
+      <div class="nav-row">
+        <button class="nav-btn" id="prevBtn" onclick="prevCard()">&#8592;</button>
+        <div class="card-index" id="cardIndex">1 / 1</div>
+        <button class="nav-btn" id="nextBtn" onclick="skipCard()">&#8594;</button>
+      </div>
+      <!-- Joker toujours visible, indépendant du feedback -->
+      <div style="display:flex; justify-content:center; margin-top:10px; width:100%; max-width:650px;">
+        <button class="joker-btn" id="jokerBtn" onclick="useJoker()">🃏 Joker (2)</button>
       </div>
 
-      <div class="note-block">
-        <span class="note-label">Note sur 20</span>
-        <span class="note-value" id="note-value">—</span>
-        <span class="note-denom">/20</span>
+      <div class="feedback-row" id="feedbackRow" style="display:none">
+        <button class="fb-btn wrong" id="fbWrong" onclick="markCard(false)">✗ À revoir</button>
+        <button class="fb-btn right" id="fbRight"  onclick="markCard(true)">✓ J'ai répondu</button>
       </div>
+    </div>
 
-      <!-- Stats types -->
-      <div class="res-breakdown" id="res-breakdown"></div>
+    <!-- List -->
+    <div class="list-mode" id="listMode" style="display:none">
+      <table class="list-table">
+        <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+        <tbody id="listBody"></tbody>
+      </table>
+    </div>
 
-      <!-- Erreurs -->
-      <div class="errors-section" id="errors-section">
-        <button class="btn-toggle-errors" id="btn-toggle-errors">
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 10 10 13 13 10"/><polyline points="7 7 10 10 13 7"/></svg>
-          Voir mes erreurs (<span id="errors-count">0</span>)
-        </button>
-        <div class="errors-list hidden" id="errors-list"></div>
-      </div>
-
-      <div class="res-btns">
-        <button class="btn-replay" id="btn-replay">↺ Recommencer ce chapitre</button>
-        <button class="btn-pick" id="btn-pick">Choisir un autre chapitre</button>
-      </div>
-
+    <!-- Footer -->
+    <div class="score-summary" id="scoreSummary" style="display:none">
+      <div class="score-item"><div class="sdot" style="background:var(--green)"></div><span id="scoreRight">0 su</span></div>
+      <div class="score-item"><div class="sdot" style="background:var(--red)"></div><span id="scoreWrong">0 à revoir</span></div>
+      <div class="score-item"><div class="sdot" style="background:var(--border)"></div><span id="scoreUnseen">0 non vu</span></div>
     </div>
   </div>
 </div>
 
-<script src="script.js"></script>
+<!-- Badge popup -->
+<div id="badgePopup">
+  <span class="bp-emoji" id="bpEmoji">🔥</span>
+  <div class="bp-title" id="bpTitle">Badge !</div>
+  <div class="bp-sub"   id="bpSub"></div>
+</div>
+
+<!-- Badges rack -->
+<div id="badgesRack"></div>
+
+<!-- Toast -->
+<!-- Flash rouge global (perte de vie) -->
+<div id="lifeFlash"></div>
+<!-- Combo banner -->
+<div id="comboBanner"></div>
+
+<div id="toast"></div>
+
+<!-- Session End -->
+<div class="overlay" id="sessionEnd">
+  <div class="ov-card">
+    <div id="newBestBanner" class="new-best" style="display:none">🏆 Nouveau record !</div>
+    <h2 id="endTitle" style="color:var(--accent)">Session terminée !</h2>
+    <p class="ov-sub" id="endSub"></p>
+    <p id="endEncouragement"></p>
+    <div class="ov-stats">
+      <div class="ov-stat g"><div class="v" id="endRight">0</div><div class="l">✓ Bonnes</div></div>
+      <div class="ov-stat r"><div class="v" id="endWrong">0</div><div class="l">✗ Erreurs</div></div>
+      <div class="ov-stat a"><div class="v" id="endScore">0</div><div class="l">Score</div></div>
+      <div class="ov-stat a"><div class="v" id="endCombo">0</div><div class="l">🔥 Combo max</div></div>
+    </div>
+    <div id="endBadges" style="margin-bottom:16px;font-size:.78rem;color:var(--muted)"></div>
+    <button class="ov-btn" onclick="closeSession()">↺ Recommencer</button>
+    <button class="ov-btn" id="retryErrorsBtn" onclick="retryErrors()" style="margin-top:10px;background:var(--surface2);color:var(--text);border:1px solid var(--border);display:none">🔁 Réviser mes erreurs (<span id="retryCount">0</span>)</button>
+  </div>
+</div>
+
+<!-- Game Over -->
+<div class="overlay" id="gameOver">
+  <div class="ov-card">
+    <h2>💀 Game Over</h2>
+    <p class="ov-sub">Tu as perdu toutes tes vies…</p>
+    <div class="ov-stats">
+      <div class="ov-stat g"><div class="v" id="goRight">0</div><div class="l">✓ Bonnes</div></div>
+      <div class="ov-stat r"><div class="v" id="goWrong">0</div><div class="l">✗ Erreurs</div></div>
+      <div class="ov-stat a"><div class="v" id="goScore">0</div><div class="l">Score</div></div>
+      <div class="ov-stat a"><div class="v" id="goCombo">0</div><div class="l">🔥 Combo max</div></div>
+    </div>
+    <button class="ov-btn" onclick="closeGameOver()">↺ Réessayer</button>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════
+   DATA
+════════════════════════════════════════════════════ */
+const DATA = [{"name": "Ch. 01 — Science économique", "cards": [{"term": "Science économique", "definition": "Science qui étudie comment les ressources rares sont employées pour la satisfaction des besoins illimités des hommes vivant en société ; elle s’intéresse d’une part aux opérations essentielles que sont la production, la distribution et la consommation des biens, d’autre part aux institutions ayant pour objet de faciliter ces opérations . (Malinvaud)"}, {"term": "Ménages", "definition": "Ensemble des occupants d'un même logement sans que ces personnes soient nécessairement unies par des liens de parenté (en cas de colocation, par exemple). Un ménage peut être composé d'une seule personne"}, {"term": "Sociétés Non Financières", "definition": "Producteurs marchands dont la fonction principale consiste à produire des biens et des services non financiers, à l’exclusion des entreprises individuelles qui sont rattachées aux ménages"}, {"term": "Sociétés Financières", "definition": "Ensemble des sociétés et quasi-sociétés dont la fonction principale consiste à fournir des services d'intermédiation financière et/ou à exercer des activités financières auxiliaires"}, {"term": "Administrations Publiques", "definition": "Ensemble des unités institutionnelles dont la fonction principale est de produire des biens et services non marchands ou d'effectuer des opérations de redistribution du revenu et des richesses nationales provenant de cotisations obligatoires ou de taxes"}, {"term": "ISBLM", "definition": "Ensemble des unités privées dotées de la personnalité juridique qui produisent des biens et services non marchands au profit des ménages."}, {"term": "RDM", "definition": "Compte qui retrace les relations économiques entre les unités qui font partie du territoire économique et celles qui n'en font pas partie, soit entre une unité résidente qui a son centre économique (activité de consommation, production, investissement) sur le territoire national pour une durée supérieure à un an, et une unité non résidente."}, {"term": "Opérations sur biens et services", "definition": "Les opérations sur biens et services décrivent comment se sont formées les ressources de la nation et les emplois qui sont faits de ces ressources"}, {"term": "Production", "definition": "Activité qui combine les ressources en main d’œuvre, en capital et en biens et services pour produire des biens et services. La valeur de ces biens et services au niveau national. Elle peut être réalisée par les entreprises (SF, SNF), les ménages (entreprises individuelles) ou l’Etat (APU)"}, {"term": "Importations", "definition": "Valeur des biens et services produits par le reste du monde et qui seront consommés par les unités résidentes."}, {"term": "Consommations intermédiaires", "definition": "Valeur des biens et services incorporés dans le processus de production d’autres biens et services."}, {"term": "Consommation finale", "definition": "Valeur des biens et services utilisés pour la satisfaction directe des besoins individuels (MEN) ou collectifs (APU)"}, {"term": "Formation Brute de Capital Fixe", "definition": "Valeur des biens et services incorporés au processus de production pour une durée supérieure à un an. L’investissement est majoritairement réalisé par les SNF"}, {"term": "Variation des stocks", "definition": "Valeur des biens produits qui sont stockés ou déstockés dans l’année."}, {"term": "Exportations", "definition": "Valeur des biens et services produits pour le reste du monde et vendus par les unités résidentes (SNF, MEN…)"}, {"term": "Opérations de répartition", "definition": "La répartition primaire du revenu comme contrepartie directe de la fourniture de main d’œuvre ou de capital : rémunération des salariés, revenus de la propriété."}, {"term": "Redistribution", "definition": "La redistribution des revenus, ou répartition secondaire du revenu, sans aucune contrepartie directe par le biais des prélèvements obligatoires : les impôts, les subventions, les transferts sociaux etc.  Elle a lieu après la répartition primaire du revenu et permet de former le revenu disponible brut."}, {"term": "Opérations financières", "definition": "Variations d’actif ou de passif des agents économiques et sont synthétisées dans le Tableau des opérations financières."}, {"term": "Production marchande", "definition": "Production écoulée ou destinée à être écoulée sur le marché à un prix économiquement significatif (>50% des coûts de production)."}, {"term": "Secteur d'activité", "definition": "Un secteur regroupe des entreprises de fabrication, de commerce ou de service qui ont la même activité principale"}, {"term": "Branche d'activité", "definition": "Une branche d’activité regroupe l’ensemble des unités de production (entreprises, établissements, ateliers…) qui fabriquent le même type de produits ou rendent le même type de services, quelle que soit leur appartenance sectorielle ou juridique"}, {"term": "Désindustrialisation", "definition": "Recul du poids de l’industrie dans l’économie, mesuré par la part des emplois industriels dans l’emploi total ou la part de la valeur ajoutée dans le PIB."}, {"term": "Tertiarisation", "definition": "Processus d’augmentation du poids du secteur tertiaire (services) dans l’économie, en termes d’emplois et de valeur ajoutée."}, {"term": "Production non marchande", "definition": "Services gratuits ou quasi-gratuits échangés contre une contribution inférieure à 50% de leur coût de production."}, {"term": "Valeur ajoutée", "definition": "Création de richesse réelle réalisée par chaque unité institutionnelle, c’est donc la différence entre la valeur de la production qu’elle réalise et la valeur des biens et services qu’elle a utilisés pour produire : VA = P – CI."}, {"term": "Répartition primaire des revenus", "definition": "Manière dont les richesses créées par la production (la valeur ajoutée) sont réparties avant toute intervention de l’État."}, {"term": "Revenus primaires", "definition": "Revenus directement issus de la production (valeur ajoutée), ils sont composés des revenus du travail, des revenus du capital et des revenus mixtes"}]}, {"name": "Ch. 02 — Histoire économique", "cards": [{"term": "1ère révolution industrielle", "definition": "La première révolution industrielle débute en Grande-Bretagne en 1770 avant de s’étendre progressivement à l’Europe occidentale et aux États-Unis. C’est le passage d’une économie artisanale et agricole à une économie industrielle mécanisée, fondée sur l’utilisation de machines et de nouvelles sources d’énergie. Elle prend fin en 1850."}, {"term": "2ème révolution industrielle", "definition": "La seconde révolution industrielle désigne la phase d’industrialisation qui se développe à partir de la fin du XIXᵉ siècle (vers 1870), marquée par de nouvelles sources d’énergie, de nouvelles industries et une production de masse organisée scientifiquement. Fin en 1914"}, {"term": "Crise de 1929", "definition": "La crise de 1929 est donc une crise économique majeure déclenchée par le krach boursier d’octobre 1929 aux États-Unis, qui se transforme en Grande Dépression, caractérisée par une chute de la production, une explosion du chômage et une crise financière mondiale."}, {"term": "New deal", "definition": "Le New Deal est un ensemble de politiques économiques et sociales mises en place aux États-Unis à partir de 1933 par le président Franklin D. Roosevelt, afin de lutter contre les effets de la Grande Dépression."}, {"term": "30 glorieuses", "definition": "Les Trente Glorieuses désignent la période de forte croissance économique qu’ont connue les pays développés entre 1945 et 1975, à la suite de la Seconde Guerre mondiale."}, {"term": "Crise des subprimes", "definition": "La crise des subprimes, qui éclate en 2007–2008, trouve son origine aux États-Unis dans l’octroi massif de crédits immobiliers risqués à des ménages peu solvables, favorisé par des taux d’intérêt bas, une déréglementation financière et la titrisation, qui diffuse le risque à l’ensemble du système financier mondial. L’effondrement du marché immobilier entraîne une crise bancaire et financière globale"}, {"term": "Crise des dettes souveraines", "definition": "C’est une crise financière qui débute vers 2010 dans la zone euro, où plusieurs États ne parviennent plus à rassurer les investisseurs sur leur capacité à rembourser leur dette, entraînant une hausse des taux d’intérêt et des difficultés de financement."}, {"term": "Libéralisme", "definition": "Doctrine selon laquelle l’État doit limiter son intervention à ses fonctions régaliennes (sécurité, justice, monnaie), afin de laisser les mécanismes du marché assurer efficacement la production et la répartition des richesses."}, {"term": "Classiques", "definition": "Economistes fondateurs du libéralisme : Adam Smith (1723-1790), David Ricardo (1772-1823), Thomas Malthus (1766-1834) et Jean-Baptiste Say (1767-1832)."}, {"term": "Néoclassiques", "definition": "Les néo-classiques de Cambridge défendent un libéralisme tempéré, admettant une intervention limitée de l’État lorsque le marché échoue à produire un résultat optimal, notamment en présence de défaillances de marché Alfred Marshall (1842-1924), Arthur Cecil Pigou (1877-1959), Léon Walras (1834-1910) et Vilfredo Pareto (1848-1923)"}, {"term": "Marxisme", "definition": "Le marxisme est une théorie économique, sociale et politique développée par Karl Marx  (1818-1883), qui analyse la société comme structurée par des rapports de classe et prévoit le renversement du capitalisme par le prolétariat."}, {"term": "Schumpeter", "definition": "Schumpeter (1883-1950) explique la croissance économique par le rôle central de l’innovation, portée par l’entrepreneur, à travers le processus de destruction créatrice, par lequel les nouvelles innovations remplacent les anciennes structures productives."}, {"term": "Néoschumpétériens", "definition": "Les néoschumpétériens, à partir de la seconde moitié du XXᵉ siècle, prolongent l'analyse de Schumpeteren intégrant le rôle des institutions, de la recherche et développement, de l’éducation et des politiques publiques d’innovation dans la croissance de long terme. Philippe Aghion(1956-...)"}, {"term": "Keynésianisme", "definition": "Le keynésianisme est une théorie économique selon laquelle l’État doit intervenir pour soutenir la demande globale afin de lutter contre le chômage et les crises économiques. Son analyse est fondamentalement de court terme"}, {"term": "Néokeynésianisme", "definition": "Les néokeynésianistes, à partir de l’après-guerre et surtout à partir des années 1970, prolongent cette approche en intégrant les rigidités des prix et des salaires, les imperfections de marché et les asymétries d’information. Robert Solow (1924–2023) intègre la dynamique de long terme. Parmi eux, Robert Solow (1924-2023) Joseph Stiglitz (1943-…) Paul Krugman (1953-…)"}]}, {"name": "Ch. 03 — Marché concurrentiel", "cards": [{"term": "Le marché", "definition": "Le marché peut être défini comme le lieu de rencontre physique ou virtuel entre l’offre et la demande, où se négocient les quantités échangées et le prix de cession d’un bien."}, {"term": "La concurrence", "definition": "La concurrence en économie est une situation où plusieurs entreprises sont en compétition sur un marché pour vendre des produits semblables/proches"}, {"term": "La loi de l'offre et de la demande", "definition": "Lorsque l’offre est supérieure à la demande, la concurrence entre les offreurs va entraîner une baisse du prix. Lorsque la demande est supérieure à l’offre, la concurrence entre les acheteurs va faire augmenter les prix.Ces deux mécanismes aboutissent à la fixation d’un prix d’équilibre et de quantités d’équilibre."}, {"term": "Elasticité revenu", "definition": "L’élasticité revenu mesure la manière dont va réagir la demande d’un bien quand le revenu d’un ménage varie."}, {"term": "Lois d'Engel", "definition": "Loi 1 : les dépenses alimentaires augmentent moins vite que le revenu, Loi 2 : les autres dépenses liées à des besoins primaires (logement, chauffage, habillement) augmentent au même rythme que le revenu. Loi 3 : les dépenses ne relevant pas de la nécessité de satisfaire des besoins primaires augmentent plus rapidement que les revenus"}, {"term": "Elasticité-prix", "definition": "L’élasticité-prix permet de comprendre comment les agents économiques réagissent face à une hausse ou une baisse du prix."}, {"term": "Elasticité croisée", "definition": "L’élasticité-croisée permet de comprendre comment les agents économiques réagissent face à une hausse ou une baisse du prix du bien X par rapport à la consommation d’un bien Y."}, {"term": "Modèle de CPP", "definition": "Le modèle de concurrence pure et parfaite repose sur 5 hypothèses (atomicité, homogénéité, libre entrée, transparence de l'info et mobilité des facteurs) qui, lorsqu’elles sont réunies, impliquent que les entreprises n’ont aucun moyen d’influencer ou d’imposer leur prix : elles sont donc « price taker »."}, {"term": "CPP selon Walras", "definition": "Pose l'hypothèse de CPP de l'existence d'un commissaire-priseur chargé de centraliser toutes les offres et toutes les demandes"}, {"term": "Optimum de Pareto", "definition": "Situtation où l'on ne peut plus améliorer la situation d’un agent sans détériorer celle d’un autre car tous les agents maximisent leur utilité retirée de la transaction et toutes les possibilités d'échange ont été épuisées."}, {"term": "Un marché efficace", "definition": "Un marché efficace est un marché qui permet une allocation optimale des ressources: où chaque bien est produit au coût le plus faible, vendu au prix qui reflète sa rareté et où la production correspond exactement à la demande : il n’y a ni sous production ni surproduction."}, {"term": "Un marché inefficace", "definition": "Un maché inefficace entraîne une mauvaise allocation des ressources quand il y a surproduction ou sous production de certains biens ou services et que les prix pratiqués ne sont plus représentatifs de la valeur réelle d’un bien."}, {"term": "Concurrence imparfaite", "definition": "La concurrence imparfaite existe dès  lors qu’une des hypothèses de la CPP est relâchée."}]}, {"name": "Ch. 04 — Limites du marché", "cards": [{"term": "Monopole", "definition": "Le monopole est une situation de marché où une seule entreprise produit un bien ou un service sans substitut proche et répond à la demande de l’ensemble du marché"}, {"term": "Rente de monopole", "definition": "La rente de monopole est le profit supplémentaire qu’une entreprise en situation de monopole peut obtenir grâce à son pouvoir de marché"}, {"term": "Abus de position dominante", "definition": "L’abus de position dominante consiste, pour une entreprise présente sur un marché, ou un groupe d'entreprises, à adopter un comportement visant à éliminer, à contraindre ou encore à dissuader tout concurrent d'entrer ou de se maintenir sur ce marché ou un marché connexe, faussant ainsi la concurrence."}, {"term": "Concurrence monopolistique", "definition": "Un marché de concurrence monopolistique est un marché sur lequel un grand nombre d'offreurs (concurrence) pratique une politique de différenciation du produit en vue de bénéficier d’une rente de monopole temporaire."}, {"term": "Oligopole", "definition": "Un oligopole est une structure de marché qui se caractérise par un petit nombre d’offreurs face à de nombreux demandeurs"}, {"term": "Entente concurrentielle", "definition": "Accord (secret ou explicite) entre plusieurs entreprises qui devraient normalement se faire concurrence, mais qui décident de coordonner leurs comportements pour réduire ou éliminer la concurrence entre elles."}, {"term": "Théorie des marchés contestables", "definition": "Willlian Baumol (1922-2017). Selon sa théorie des marchés contestables, la concurrence n’a pas besoin de toutes ces conditions pour s’exercer car il suffit qu’il n’y ait pas de barrières à l’entrée du marché et que toute entreprise attirée par la perspective de profit puisse y entrer pour dissuader les autres de pratiquer un prix trop élevé."}, {"term": "Défaillance de marchés", "definition": "Une défaillance de marché existe dès lors que le marché, même parfaitement concurrentiel, n’intègre pas dans son système de prix ou dans le volume des échanges réalisés la valeur des conséquences indirectes des relations économiques ; il est alors inefficace en raison d’une allocation sous-optimale des ressources."}, {"term": "Asymétrie d'information", "definition": "Une asymétrie d’information existe dès lors que tous les agents ne sont pas informés de la même manière sur l’état de l’offre, de la demande et des conditions de prix des échanges et que donc, l’hypothèse d’information parfaite ne se vérifie pas."}, {"term": "Sélection adverse", "definition": "Le risque de sélection adverse ou antisélection : avant toute transaction, il existe une asymétrie d’information portant sur la nature du bien échangé."}, {"term": "Aléa moral", "definition": "Après toute transaction, il existe une asymétrie d’information portant sur les actions qui vont suivre la transaction et qui repose sur l’absence de possibilités de contrôler en permanence les actions de l’une de deux parties."}, {"term": "Externalité", "definition": "Une externalité est une situation où l’activité économique d’un agent économique affecte positivement ou négativement la situation d’un autre agent sans que cette interaction ne transite par le marché. Le bénéfice ou le coût social de cette interaction ne sont donc pas pris en compte par le mécanisme des prix.  Alfred Marshall (1842-1923)"}, {"term": "Taxe du pollueur-payeur", "definition": "Arthur Pigou ( (1877-1959)  propose une taxe pour corriger les externalités négatives et des subventions pour encourager les externalités positives"}, {"term": "Marchés virtuels", "definition": "Ronald Coase (1910-2013) propose la création d'un marché virtuel où l’Etat attribue la propriété d’un bien à l’une des parties pour que le mécanisme de marché se mette en place et que le prix reflète enfin le coût social et internalise l’externalité"}, {"term": "Un bien public", "definition": "C'est un bien qui répond à deux critères. Un critère de non-rivalité : cela signifie que la consommation de ce bien par un usager n'entraîne aucune réduction de la consommation des autres usagers. Un critère de non-exclusion : il est impossible d'exclure quiconque de la consommation de ce bien ; il est, par conséquent, impossible de faire payer l'usage de ce bien. Samuelson (1915-2009)"}, {"term": "La tragédie des biens communs", "definition": "Garrett Hardin (1915-2003) : lorsqu’une ressource est librement accessible, chaque agent a intérêt à en maximiser l’usage sans se soucier des autres, ce qui conduit inévitablement à sa surexploitation et à sa disparition. Pour Hardin, seule une intervention extérieure – privatisation ou contrôle étatique – permet d’éviter cette issue."}, {"term": "Le passager clandestin", "definition": "Un passager clandestin attend que d'autres individus prennent l'initiative de la production d'un bien public, pour pouvoir ensuite en bénéficier, sans supporter aucun coût. Dans ces conditions, il existe une forte probabilité que le bien ne soit pas produit, ou pas suffisamment.L'Etat assure donc la production des biens publics."}, {"term": "La gestion des biens communs", "definition": "Elinor Ostrom (1933-2012) nuance le rôle de l’Etat et montre que les communautés locales peuvent, dans certains cas, autogérer durablement leurs ressources communes sans passer par l’État ni par le marché. Elle identifie un ensemble de règles d’auto-organisation, de sanctions internes et de mécanismes de surveillance qui permettent aux utilisateurs de préserver la ressource et de limiter son accès."}]}, {"name": "Ch. 05 — Comportments de S et I", "cards": [{"term": "Epargne", "definition": "L’épargne est une fraction du revenu d’un agent économique qui n’est pas consommée immédiatement. L’épargne est un flux qui vient modifier la valeur du patrimoine (un stock)."}, {"term": "Formes d'épargne", "definition": "Epargne liquide (dépôts à vue ou de court terme) et épargne longue placée : Sous forme financière : actions, obligations, assurances vie, PEL, CER…/Sous forme non financière : logement, terrains, objets d’art…"}, {"term": "Motifs d'épargne", "definition": "précaution/placement/transaction/spéculation"}, {"term": "Déterminants de l'épargne", "definition": "Taux i / inflation (Pigou)  / revenu (Keynes) / cycle de vie (Modigliani) / fiscalité / incertitude"}, {"term": "Besoin de financement", "definition": "Le besoin de financement d’un agent économique correspond à la situation où ses besoins financiers (à l’origine de dépenses de consommation et/ou d’investissement) excèdent ses ressources financières. En comptabilité nationale, le besoin de financement désigne le solde négatif du compte de capital."}, {"term": "Investissement", "definition": "L'investissement est un flux qui vient renouveler ou augmenter le stock de capital dont dispose une entreprise ou une économie. Au sens de la comptabilité nationale, l’investissement brut mesuré par le biais de la FBCF, la valeur des biens durables acquis par les unités productives résidentes afin d’être utilisés dans le processus de production pour une durée supérieure à un an."}, {"term": "Dtéerminants de l'investissement", "definition": "Taux i / Demande effective (Keynes) / TUC / rentabilité financière / arbitrage des coûts / situation budégtaire des agents"}, {"term": "Capacité de financement", "definition": "La capacité de financement d’un agent économique correspond à la situation où ses ressources financières excèdent ses besoins financiers. Elle désigne le solde positif du compte de capital dans le cadre de la comptabilité nationale. Revenu – dépenses de consommation et d’investissement > 0 = capacité de financement"}]}, {"name": "Ch. 06 — Financement", "cards": [{"term": "Financement interne", "definition": "Mode de financement d’une entreprise qui repose sur ses propres ressources, sans recours à des capitaux extérieurs."}, {"term": "Financement externe", "definition": "Recours à des ressources provenant d’agents économiques extérieurs à l’entreprise pour financer ses besoins (investissements, développement, trésorerie…)."}, {"term": "Financement indirect", "definition": "Financement de l’activité d’un agent en besoin de financement par un agent en capacité financement est géré par une société financière qui fera office d’intermédiaire"}, {"term": "Financement direct", "definition": "Situation où les agents à capacité de financement (épargnants, investisseurs) prêtent ou investissent directement auprès des agents à besoin de financement (entreprises, administrations publiques), sans passer par un intermédiaire financier comme une banque."}, {"term": "Intermédiation financière", "definition": "Financement indirect reposant sur l’intervention d’institutions financières qui assurent la mise en relation entre agents à capacité et agents à besoin de financement."}, {"term": "Transformation des échéances", "definition": "Les banques opèrent donc la transformation de dépôts « à vue » ou de « court terme » en créances de « moyen » ou de « long » terme"}, {"term": "Monnaie", "definition": "Ensemble des actifs permettant de se libérer d’une dette, sur un territoire donné, sans délai et sans risque de perte en capital."}, {"term": "Fonctions de la monnaie", "definition": "Intermédiaire des échanges, réserve de valeur, instrument de mesure"}, {"term": "Création monétaire", "definition": "Augmentation de la masse monétaire en circulation dans l’économie."}, {"term": "SEBC", "definition": "Le Système Européen des Banques Centrales (SEBC) est composé de la Banque Centrale Européenne (BCE) et des 27 banques centrales des Etats Membres, adhérant ou non à l’euro."}, {"term": "Marché monétaire", "definition": "Marché des capitaux à court terme et moyen terme : de 24h à 7 ans. Il a pour fonction principale d’assurer la gestion de la liquidité du système financier et le financement à court terme des agents économiques. Il met principalement en relation les banques de second rang, les institutions financières, l’État et la banque centrale. Il comprend le marché interbancaire et le marché des Titres de Créance Négociables"}, {"term": "Marché interbancaire", "definition": "Marché strictement réservé aux banques qui leur permet de se refinancer entre elles plutôt qu’auprès de la banque centrale."}, {"term": "Marché des TCN", "definition": "Marché ouvert à tous les agents économiques sous conditions et qui permet d’acheter des titres de créances à court et moyen terme"}, {"term": "Marché financiers", "definition": "Lieu de rencontres et d’échanges entre une offre et une demande de capitaux à long terme, dont le support est représenté par une valeur mobilière."}, {"term": "Valeurs mobilières", "definition": "Titres représentant des droits d’associés (actions) ou de prêteurs à long terme (obligations) qui se négocient à un prix appelé cours et s’échangent contre de l’argent liquide."}, {"term": "Une action", "definition": "Titre de propriété d’une fraction d’un capital social d’une société. Ce titre donne droit à un revenu (dividende) variable en fonction du résultat annuel et des décisions prises par l’AG des actionnaires; à une partie de l’actif net de l’entreprise en cas de liquidation; à une information et un contrôle sur la gestion de l’entreprise"}, {"term": "Une obligation", "definition": "Titre d’endettement émis sur le marché financier par une grande entreprise ou le Trésor Public"}, {"term": "Marché primaire", "definition": "Le marché primaire ou marché « du neuf » qui est celui où les entreprises et l’Etat émettent de nouveaux titres (actions ou obligations)."}, {"term": "Marché secondaire", "definition": "Le marché secondaire ou marché « de l’occasion » sur lequel se revendent les titres déjà émis et qui sont détenus par les agents économiques."}, {"term": "Produits dérivés", "definition": "Contrat financier portant sur la valeur anticipée : des taux d'intérêt, d'une devise, d'une action ou des matières premières"}, {"term": "Marché des changes", "definition": "Marché formé par les offres et les demandes de devises à un prix nommé le taux de change."}, {"term": "Taux de change nominal", "definition": "Prix d’une monnaie exprimé dans une autre monnaie."}, {"term": "Système de changes fixes", "definition": "Dans un système de taux de change fixes, la baisse (hausse) de cours est décidée par les autorités officielles du pays émetteur de cette monnaie : une baisse (hausse) de la parité officielle est qualifiée de dévaluation (réévaluation)"}, {"term": "Système de changes flottants", "definition": "Dans un système de change flottant, le taux de change entre deux monnaies est défini par le marché, soit par la rencontre entre l’offre et la demande"}]}, {"name": "Ch. 07 — Mesurer la croissance", "cards": [{"term": "PIB", "definition": "Valeur des biens et services produits par les unités résidentes évaluée au prix du marché et disponibles pour des emplois finals propres."}, {"term": "Approche par la demande du PIB", "definition": "DC + FBCF + VS + X – M"}, {"term": "Approche par la production du PIB", "definition": "PIB = Somme des VA + TVA et droits de douane – SP"}, {"term": "Approche par les revenus du PIB", "definition": "Excédent Brut d’Exploitation+ + rémunération des salariés+ impôts sur la production- subventions d'exploitation"}, {"term": "PIB en valeur", "definition": "Le PIB en valeur se mesure en milliards d'euros courants au prix du marché (valeur monétaire de la production avec effet prix)"}, {"term": "PIB en volume", "definition": "Le PIB en volume se mesure à prix constant – données déflatées donc sans tenir compte de l’inflation (effet volume) avec une année de référence."}, {"term": "Croissance", "definition": "Pour F. Perroux (1903-1987), « la croissance est l’augmentation soutenue pendant une ou plusieurs périodes longues, d’un indicateur de dimension, pour une nation, le produit global en terme réels » (PIB).  La croissance est donc un phénomène quantitatif et conjoncturel qui se mesure par le taux de variation du PIB (souvent en volume) sur une période donnée, généralement N / N-1."}, {"term": "Limites du PIB", "definition": "Activités qui en sont exclues / Externalités / Inégalités"}, {"term": "Développement d'un pays", "definition": "C'est la combinaison de changements mentaux et sociaux d’une population apte à faire croître son produit réel global (F .Perroux)."}, {"term": "IDH", "definition": "L’indice de développement humain (IDH) correspond à un indice composé calculé chaque année par le PNUD afin d’évaluer le niveau de développement des pays en se fondant non pas sur des données strictement économiques, mais sur la qualité de vie de leurs ressortissants. Il intègre trois facteurs : l'espérance de vie à la naissance, le niveau d'éducation et le revenu par habitant."}, {"term": "IPM", "definition": "L’indice de pauvreté multidimensionnelle (IPM), qui permet de mesurer différents aspects de la pauvreté à l’exclusion du revenu : mortalité infantile, accès à l’eau potable, à l’électricité, années de scolarité"}, {"term": "Empreinte écologique", "definition": "L'empreinte écologique mesure la pression exercée par les hommes envers les ressources naturelles et les « services écologiques » fournis par la nature."}, {"term": "Empreinte carbon", "definition": "L'empreinte carbone est un indicateur qui vise à mesurer l'impact d'une activité sur l'environnement, et plus particulièrement les émissions de gaz à effet de serre liées à cette activité."}]}, {"name": "Ch. 08 — Théories croissance", "cards": [{"term": "Facteur travail", "definition": "Ensemble des activités humaines, manuelles ou intellectuelles, visant à produire des biens et/ou des services. Il est fourni par les ménages qui vendent leur travail en échange d’un salaire"}, {"term": "Facteur capital", "definition": "Capital technique : le facteur de production constitué de biens de production"}, {"term": "Productivité", "definition": "La productivité est le rapport entre une production et les ressources (ou facteurs de production) mises en œuvre pour l’obtenir. Elle se mesure par le rapport : Volume ou valeur de la production / quantité (volume ou valeur) facteurs production utilisés pour la production."}, {"term": "Gains de productivité", "definition": "Hausse de la production obtenue à moyens constants, ou à la réduction des moyens nécessaires pour produire une même quantité de biens et services."}, {"term": "Productivité globale des facteurs", "definition": "Efficacité de la combinaison productive capital et travail et sa contribution à la croissance"}, {"term": "Robert Solow (1924-2023)", "definition": "Modèle de croissance exogène où  l’existence du progrès technique ne possède aucune explication mathématique ou économique, c’est une « manne tombée du ciel »."}, {"term": "Joseph Schumpeter (1883-1950)", "definition": "La théorie de Joseph Schumpeter explique que la croissance économique vient de l’innovation portée par les entrepreneurs, qui introduisent de nouvelles combinaisons (produits, procédés, marchés). Ces innovations provoquent un processus de « destruction créatrice » : les anciennes activités disparaissent au profit des nouvelles, ce qui renouvelle en permanence l’économie et alimente la croissance."}, {"term": "Croissance endogène", "definition": "Théories selon lesquelles la croissance économique résulte de facteurs internes à l’économie, notamment le progrès technique produit par les investissements en recherche, en capital humain et en innovation. Ce progrès technique génère des externalités positives et des rendements non décroissants, permettant une croissance durable et auto-entretenue grâce à l’accumulation de connaissances diffusées dans toute l’économie."}, {"term": "Romer / Lucas / Barro / Aghion", "definition": "R&D / Capital humain / Infrastructures / Innovation"}, {"term": "Malthus (1766-1834)", "definition": "Il démontre que l’augmentation des ressources naturelles suit une croissance arithmétique tandis que l’augmentation de la population suit une croissance exponentielle. Par conséquent, les ressources naturelles à la disposition de l’Homme sont un facteur limitant et la pauvreté, un fait social inéluctable."}, {"term": "David Ricardo (1772-1823)", "definition": "Il montre que la rareté et la qualité inégale des terres agricoles entraînent une baisse tendancielle du rendement et donc du profit, ce qui constitue, selon lui, une limite naturelle à la croissance économique"}, {"term": "Economie circulaire", "definition": "L’économie circulaire, qui cherche à réduire le gaspillage des ressources et les déchets tout au long du cycle de vie d’un bien ou d’un service,"}, {"term": "Biomimétisme", "definition": "Cette approche vise à imiter le fonctionnement du vivant pour inventer des matériaux, procédés et organisations plus sobres et plus résilients."}, {"term": "Economie de la fonctionnalité", "definition": "L'économie de la fonctionnalité substitue l’usage à la propriété afin de découpler croissance et consommation de matières premières."}]}, {"name": "Ch. 09 — Limites et croissance", "cards": [{"term": "Loi d'Okun (1962)", "definition": "Existence d'un lien inverse entre le rythme de croissance du PIB et l’évolution du taux de chômage : une croissance économique insuffisante se traduit par une hausse du chômage, tandis qu’une croissance soutenue permet sa diminution."}, {"term": "Courbe de Kuznets (1955)", "definition": "Le processus de développement économique s’accompagne d’abord d’un creusement des inégalités de revenus, avant de conduire, au-delà d’un certain niveau de richesse, à leur réduction progressive. Ainsi, dans une première phase, la croissance a tendance à accroître les inégalités de revenus, puis, à partir d'un certain seuil de revenus, celle-ci génère au contraire, un rapprochement des niveaux de vie."}, {"term": "Joseph Stiglitz (1943-…)", "definition": "Limite sociale de la croissance : des inégalités excessives fragilisent la cohésion sociale, limitent l’égalité des chances et peuvent même freiner la croissance à long terme en comprimant la demande intérieure et en décourageant l’investissement productif, rendant ainsi la croissance socialement inefficace."}, {"term": "Le « Rapport Meadows » (1972)", "definition": "Limite environnementale : Le « Rapport Meadows » (1972) souligne les conséquences dramatiques pour l’environnement de la croissance économique et démographiqu"}, {"term": "Développement durable", "definition": "Développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs"}, {"term": "Croissance durable", "definition": "Une croissance est dite durable lorsqu’elle parvient à concilier les trois piliers du développement durable : environnemental (croissance verte), sociale (croissance inclusive) et économique"}, {"term": "Croisance verte", "definition": "FLa croissance verte désigne une forme de croissance économique visant à maintenir l’augmentation de la production tout en réduisant les atteintes à l’environnement"}, {"term": "Croissance inclusive", "definition": "Croissance économique dont les bénéfices sont partagés par l’ensemble de la population."}, {"term": "Croissance soutenable", "definition": "Une croissance \"soutenable\" doit répondre aux besoins du présent sans compromettre les chances des générations futures.  Une croissance soutenable répond aux enjeux environnementaux et de soutenabilité de la dette publique."}, {"term": "Soutenabilité faible", "definition": "La soutenabilité faible qui postule l’idée que lorsqu’une ressource naturelle devient rare, son prix augmente et donc décourage son utilisation par les agents économiques."}, {"term": "Soutenabilité forte", "definition": "La soutenabilité forte vise à protéger les ressources disponibles pour prévenir leur disparition (courant écologique) surtout que celles-ci peuvent avoir un impact sur la productivité des autres capitaux."}, {"term": "Economie sociale et solidaire", "definition": "L’économie sociale et solidaire (ESS) par la loi du 31/07/2014 désigne l’ensemble des organisations économiques dont le fonctionnement et les activités reposent sur des principes de solidarité, de gouvernance démocratique et d’utilité sociale. Elle vise à concilier l’exercice d’une activité économique avec la recherche d’un impact social et environnemental positif, en répondant à des besoins collectifs insuffisamment pris en charge par le marché ou l’État."}, {"term": "Economie de la fonctionnalité", "definition": "Modèle économique qui consiste à vendre l’usage ou la performance d’un bien plutôt que le bien lui-même."}, {"term": "Ecoconception", "definition": "L’écoconception intègre dès la conception des produits la réduction des consommations de matières et d’énergie"}]}, {"name": "Ch. 10 — Rôle de l'Etat", "cards": [{"term": "Richard Musgrave (1910-2007)", "definition": "L'État joue trois fonctions économiques fondamentales, chacune visant un objectif distinct : allocation des ressources, redistribution des ressources et satbilisation de la conjoncture"}, {"term": "APUC", "definition": "L’administration publique centrale (APUC) qui regroupe l’État, ses ministères ainsi que les Organismes Divers d’Administration Centrale (ODAC – exemple : AFNOR, INPI, IGN etc.). C’est l’autorité centrale, l’État."}, {"term": "APUL", "definition": "Les administrations publiques locales (APUL) sont principalement constituées par le regroupement des  collectivités territoriales."}, {"term": "APUSS", "definition": "Les administrations publiques de sécurité sociale (APUSS) regroupent les régimes d'assurance sociale et les organismes dépendant des assurances sociales."}, {"term": "Décentralisation", "definition": "Mode d’organisation d’un état unitaire qui consiste à transférer des compétences de l’État vers les collectivités territoriales."}, {"term": "AAI", "definition": "Organisme de l’État sans personnalité juridique, créé par la loi pour garantir l’impartialité de la régulation ou la protection des droits fondamentaux, à l’écart du pouvoir exécutif."}, {"term": "API", "definition": "Organisme de droit public doté de la personnalité juridique et de l’autonomie financière, chargé d’une mission de régulation exercée en toute indépendance vis-à-vis du gouvernement."}, {"term": "UE", "definition": "Organisation supranationale qui regroupe 27 États membres partageant des valeurs communes (démocratie, État de droit, droits fondamentaux) et qui ont choisi de mettre en commun certaines compétences souveraines afin de poursuivre des objectifs économiques, sociaux et politiques communs. Elle repose sur les traités fondateurs qui ont progressivement élargi la coopération économique vers une union politique et monétaire pour certains membres (la zone euro)."}, {"term": "Traité de Rome", "definition": "Le 25 mars 1957, le traité de Rome est signé par 6 pays qui fondent la Communauté économique européenne (CEE) et la Communauté européenne de l'énergie atomique (CEEA) ou Euratom avec deux objectifs : créer un marché commun et se doter d'institutions politiques pour créer des liens plus étroits"}, {"term": "Traité de Maastricht", "definition": "Le Traité de Maastricht, signé en 1992, fonde l’Union européenne et marque une étape majeure de l’intégration européenne. Il instaure notamment l’Union économique et monétaire avec la création d’une monnaie unique, l’euro, ainsi que des critères de convergence pour les États membres."}, {"term": "PSC", "definition": "Le Pacte de stabilité et de croissance (PSC), adopté en 1997, encadre les politiques budgétaires des États membres de l’Union européenne afin de garantir la stabilité de la zone euro. Il impose des règles strictes, notamment un déficit public inférieur à 3 % du PIB et une dette publique inférieure à 60 % du PIB. Son objectif est d’éviter les dérives budgétaires des États qui pourraient fragiliser la monnaie unique et l’ensemble de l’économie européenne."}, {"term": "Subsidiarité (principe)", "definition": "L’Union européenne n’intervient que si les objectifs d’une action ne peuvent pas être atteints de manière suffisante par les États membres, mais peuvent mieux l’être au niveau européen."}, {"term": "Proportionnalité (principe)", "definition": "L’action de l’Union ne doit pas aller au-delà de ce qui est nécessaire pour atteindre les objectifs fixés par les traités."}, {"term": "Budget de l'Etat", "definition": "Le budget de l’État est l’acte par lequel sont prévues et autorisées les recettes et les dépenses de l’État pour une année civile. Il suit un cycle annuel défini par la Constitution (article 47) et la loi organique relative aux lois de finances (LOLF)."}, {"term": "Dépenses publiques", "definition": "Les dépenses publiques permettent de financer les besoins collectifs de la nation : éducation, santé, défense, protection sociale etc."}, {"term": "Recettes publiques", "definition": "Les recettes publiques sont essentiellement des recettes fiscales et des recettes non fiscales. Elles augmentent dès lors que le pays connaît une augmentation de la croissance."}, {"term": "Prélèvements obligatoires", "definition": "Les prélèvements obligatoires comprennent les impôts et les cotisations sociales qui permettent le financement de la protection sociale au travers du budget des APUSS."}, {"term": "Cotisations sociales", "definition": "Les cotisations sociales sont des prélèvements obligatoires versés par les employeurs, les salariés ou les indépendants pour financer la protection sociale, donnant droit à des prestations (santé, retraite, chômage, famille)."}, {"term": "Déficit public", "definition": "Différence négative entre les recettes et les dépenses de l’ensemble des administrations publiques (État, collectivités territoriales, Sécurité sociale, organismes divers d’administration centrale) au cours d’une année"}, {"term": "Dette publique", "definition": "Ensemble de tous les emprunts publics contractés par toutes les administrations publiques au cours du temps."}, {"term": "TSCG", "definition": "Le Traité sur la stabilité, la coordination et la gouvernance (TSCG), signé en 2012, a complété le PSC en introduisant la notion de règle d’or d’équilibre structurel : le déficit structurel (corrigé des effets de la conjoncture) ne doit pas dépasser 0,5 % du PIB pour les pays les plus endettés (>60% du PIB ; 1% si <60% du PIB)."}]}, {"name": "Ch. 11 — Politiques éco", "cards": [{"term": "Politiques économiques", "definition": "Ensemble de décisions cohérentes prises par les pouvoirs publics et visant à atteindre des objectifs à l’aide de différents instruments, dans le but d’orienter l’économie dans un sens souhaitable à plus ou moins long terme."}, {"term": "Politique conjoncturelle", "definition": "Ensemble des mesures économiques prises par les pouvoirs publics pour agir à court terme sur l’activité économique. Son objectif est de stabiliser la conjoncture en réduisant les fluctuations du cycle économique : relancer la croissance en période de ralentissement, ou freiner l’activité en cas de surchauffe. Elles s’appuient principalement sur la politique budgétaire (dépenses et impôts de l’État) et la politique monétaire (taux d’intérêt et masse monétaire)."}, {"term": "Politique structurelle", "definition": "Politiques qui visent à modifier en profondeur le fonctionnement de l’économie pour améliorer son efficacité et sa compétitivité à long terme. Elle agit sur les structures de production, de formation et d’emploi afin de favoriser une croissance durable"}, {"term": "Carré magique de Kaldor", "definition": "Le  « carré magique » proposé en 1971 par l’économiste britannique Nicholas KALDOR (1908-1986)  fixe des objectifs de politique économique de court terme difficiles à atteindre simultanément qui impliquent  des arbitrages de la part de l’Etat : : plein emploi, stabilité des prix, équilibre de la balance extérieure, croissance."}, {"term": "Politique monétaire", "definition": "La politique monétaire vise à contrôler le taux d’inflation d’une économie en contrôlant la quantité de monnaie en circulation dans une économie. Pour y parvenir, elle va orienter les comportements d’épargne, de consommation ou d’investissement des agents économiques au travers de différents instruments financiers."}, {"term": "Politique monétaire conventionnelle", "definition": "La Banque Centrale contrôle la création monétaire en augmentant ou en limitant le montant des crédits accordés aux agents économiques en agissant sur les taux d'intérêt, sur le taux de réserves obligatoires ou par des politiques d'open market"}, {"term": "Politique monétaire non conventionnelle", "definition": "La Banque Centrale contrôle la création monétaire en intervenant par des programmes massifs de rachat d'actifs en rompant avec son devoir d'indépendance à l'égard des Etats."}, {"term": "Politique monétaire expansionniste", "definition": "Une politique monétaire expansionniste vise à relancer la consommation et l’investissement."}, {"term": "Politique monétaire restrictive", "definition": "Une politique monétaire restrictive vise à freiner la consommation et l’investissement pour limiter l’inflation"}, {"term": "Politique budgétaire", "definition": "Ensemble des décisions de l’État concernant ses dépenses publiques et ses recettes fiscales dans le but d’influencer l’activité économique."}, {"term": "Politique budgétaire de relance", "definition": "Une politique budgétaire de relance vise une croissance forte et le plein emploi par l'augmentation des dépenses publiques et/ou la baisse des prélèvements obligatoires."}, {"term": "Politique budgétaire d'austérité", "definition": "Une politique budgétaire d’austérité vise à assainir les finances publiques ou à ralentir l’inflation, signe de la surchauffe du système économique par la baisse des dépenses publiques et la hausse des prélèvements obligatoires"}, {"term": "Policy mix", "definition": "Le policy mix désigne la combinaison de la politique budgétaire et de la politique monétaire mise en œuvre pour atteindre les grands objectifs de la politique économique : la croissance, la stabilité des prix, le plein emploi et l’équilibre extérieur."}, {"term": "Politique de demande", "definition": "Une politique de demande vise à stimuler la consommation et l’investissement en soutenant le pouvoir d’achat des ménages et la dépense publique."}, {"term": "Politique d'offre", "definition": "Unepolitique d’offre cherche à améliorer la capacité de production et la compétitivité des entreprises en agissant sur leurs coûts et leur efficacité à long terme"}, {"term": "Effet multiplicateur", "definition": "Selon Keynes, une variation d’une des composantes de la demande (consommation, investissement, dépense publique) provoquera une variation plus élevée de la production. Par conséquent, il faut soutenir l'économie par des politiques de relance axées sur la demande."}, {"term": "La courbe de  Laffer (1974)", "definition": "La courbe d’Arthur Laffer (1940-…) illustre l'idée selon laquelle il existe un niveau maximal de taxation au-delà duquel le produit de l'impôt diminue. Avant \"t\", une augmentation de la pression fiscale engendre une hausse des recettes pour l'Etat. Après ce point, l'effet désincitatif sur l'offre de travail l'emporte sur les recettes attendues."}, {"term": "Effet d'éviction", "definition": "Milton Friedman (1912-2006), le recours à l’emprunt peut entraîner un effet d’éviction, la demande de capitaux des agents privés sur le marché financier s’oriente alors vers l’État au détriment des entreprises. L'investissement ralentit, la croissance aussi."}, {"term": "Equivalence ricardienne", "definition": "Robert Barro (1944-…) montre en 1974 qu'une politique de déficit budgétaire financée par l'emprunt reste sans effet sur l'activité économique car agents ne sont pas victimes de l'illusion fiscale : ils anticipent la hausse des impôts destinée à rembourser l'emprunt et constituent une épargne de précaution qui nuit à la consommation et donc à la relance"}, {"term": "Loi de Say", "definition": "La loi de Jean Baptiste Say ( 1767-1832) : toute offre crée sa propre demande. Justification à la politique d'offre"}, {"term": "Loi de Wagner (1872)", "definition": "Le rôle et les dépenses de l’État ont naturellement tendance à croître avec le développement économique et social, Wagner défend une intervention croissante et légitime de l’État, non pas pour remplacer le marché, mais pour accompagner le développement économique et répondre aux nouveaux besoins collectifs qu’il génère"}, {"term": "Libertarisme", "definition": "Hayek considère l’État comme une coalition d’intérêts particuliers, cherchant à se maintenir au pouvoir en satisfaisant certains groupes au détriment de la liberté économique. Dès lors, toute extension de ses prérogatives économiques risque de mener à une forme de despotisme ou de totalitarisme, car le pouvoir politique n’a plus intérêt à voir émerger des contre-pouvoirs ou des initiatives privées"}, {"term": "Ecole du choix public", "definition": "Les décideurs politiques agissent avant tout en fonction de leurs intérêts personnels, notamment la recherche de leur réélection (Buchanan & Tullock).Les gouvernements sont incités à creuser les déficits publics avant les élections, en menant des politiques de relance destinées à réduire le chômage et à séduire les électeurs, puis à appliquer ensuite des politiques de rigueur une fois réélus, afin de corriger les déséquilibres budgétaires (Nordhaus)"}]}, {"name": "Ch. 12 — Cadre européen", "cards": [{"term": "Soutenabilité de la dette", "definition": "Capacité d’un État à rembourser sa dette sur le long terme sans devoir recourir à des ajustements excessifs (hausse brutale des impôts ou baisse forte des dépenses) ni compromettre la croissance économique."}, {"term": "Effet boule de neige", "definition": "L’effet boule de neige se produit lorsque le taux de croissance de l’économie (taux évolution du PIB en %) est inférieur aux taux d’intérêt, les recettes fiscales s’amoindrissent (stabilisateur automatique), tandis que les charges d’intérêts, qui font partie des dépenses publiques, augmentent, ce qui contribue à creuser le déficit budgétaire. L’accroissement du déficit doit être financé par un nouvel endettement : c’est l’effet « boule de neige »."}, {"term": "Règle d'or", "definition": "Le déficit structurel (corrigé des effets de la conjoncture) ne doit pas dépasser 0,5 % du PIB pour les pays les plus endettés (>60% du PIB ; 1% si <60% du PIB)."}, {"term": "Traités fixant le cadre budgétaire", "definition": "PSC (1997)  et TSCG (2012)"}, {"term": "Inflation", "definition": "Perte du pouvoir d'achat de la monnaie qui se traduit par une augmentation générale, durable et soutenue du niveau général des prix, mesuré en France par l’Indice des Pirx à la Consommation"}, {"term": "Déflation", "definition": "Baisse du niveau général des prix."}, {"term": "Désinflation", "definition": "Baisse du taux d'inflation"}, {"term": "Politique monétaire conventionnelle", "definition": "Contrôle de la création monétaire en augmentant ou en limitant le montant des crédits accordés aux agents économiques en agissant sur les taux d'intérêt, sur le taux de réserves obligatoires ou par des politiques d'open market"}, {"term": "Politique monétaire non conventionnelle", "definition": "Contrôle de la création monétaire en augmentant ou en limitant le montant des crédits accordés aux agents économiques en intervenant par des programmes massifs de rachat d'actifs en rompant avec son devoir d'indépendance à l'égard des Etats."}, {"term": "Causes de l'inflation", "definition": "Choc d'offre, choc de demande, origine monétaire"}, {"term": "Causes de la déflation", "definition": "Insuffisance de la demande / politiques d'austérité / Excès de capacités de production"}, {"term": "Canaux de transmission de la politique monétaire", "definition": "Canal du taux directeur / Canal du change"}, {"term": "Budget annuel de l'UE", "definition": "Le budget annuel de l'UE fixe l'ensemble des dépenses et recettes de l'Union européenne pour une année. Il garantit le financement des politiques et programmes de l'UE, conformément aux priorités politiques et aux obligations juridiques de l'UE. (Conseil de l’Europe)"}, {"term": "Stratégie Europe 2030", "definition": "Green Deal Européen / Politique d'innovation / Cohésion des territoires"}, {"term": "Politiques de cohésion", "definition": "Politiques qui visent à réduire les écarts de développement entre régions et à renforcer la cohésion de l’Union."}, {"term": "Semestre européen", "definition": "Mécanisme annuel de coordination mis en place par l’Union européenne pour surveiller, orienter et harmoniser les politiques économiques, budgétaires et sociales des États membres."}, {"term": "La politique agricole commune (PAC)", "definition": "Politique commune, dont l'objectif est de fournir aux citoyens de l'UE des denrées alimentaires à un prix abordable et d'assurer un niveau de vie équitable aux agriculteurs."}]}, {"name": "Ch. 13 — Marché du travail", "cards": [{"term": "Chômage (BIT)", "definition": "Le chômage au sens du Bureau international du travail désigne les personnes de 15 ans ou plus qui n’ont pas travaillé durant la semaine de référence, qui sont disponibles pour travailler rapidement et qui ont effectué des démarches actives de recherche d’emploi ou trouvé un emploi débutant prochainement."}, {"term": "Chômage au sens du ministre du travail", "definition": "Le chômage au sens du ministère du Travail regroupe les demandeurs d’emploi inscrits à Pôle Emploi. Ce sont des personnes qui se sont inscrites à Pôle emploi qui peuvent être indemnisées ou non, exercer une activité réduite ou non. Les demandeurs d'emploi en fin de mois (DEFM) sont les personnes inscrites à Pôle Emploi et ayant une demande en cours au dernier jour du mois."}, {"term": "Halo du chômage", "definition": "Le « Halo du chômage », concept d’abord énoncé par J.Freyssinet (1988, Le chômage), désigne toutes les situations intermédiaires entre le chômage et l’inactivité."}, {"term": "Taux de chômage", "definition": "Le taux de chômage est le pourcentage de chômeurs dans la population active (actifs occupés + chômeurs). Il se calcule ainsi  : (Nombre  de chômeurs au sens du BIT)/(Population active) x100"}, {"term": "Population active", "definition": "Personnes de 15 ans ou plus qui exercent une activité professionnelle, sont indépendantes, aident un membre de leur famille sans être salariées, sont apprenties ou stagiaires rémunérées, ou sont sans emploi mais en recherchent un."}, {"term": "Situation d'emploi", "definition": "Une personne est en emploi lorsqu’elle exerce une activité productive, rémunérée ou non, même si elle est temporairement absente de son travail (congé, maladie)."}, {"term": "Emplois vacants", "definition": "Postes libres, nouvellement créés ou inoccupés, ou encore occupés et sur le point de se libérer, pour lesquels des démarches actives sont entreprises pour trouver le candidat convenable."}, {"term": "Chômage structurel", "definition": "Chômage durable lié aux transformations et rigidités de l’économie."}, {"term": "Chômage volontaire", "definition": "Les prix étant parfaitement flexibles, le chômage classique n’existe que grâce au refus des travailleurs d'accepter le salaire de marché."}, {"term": "Chômage frictionnel", "definition": "Chômage qui résulte des délais d’ajustement sur le marché du travail lié  aux ajustements de salaires et du niveau d'emploi (Pigou)"}, {"term": "Chômage classique", "definition": "Chômage qui résulte des rigidités du marché du travail empêchant le salaire de s’ajuster librement à son niveau d’équilibre, ce qui provoque un excès d’offre de travail par rapport à la demande. En effet, toute rigidité sur le marché du travail comme l’existence d’un salaire minimum, le pouvoir de négociation des syndicats ou certaines réglementations du travail… constitue une atteinte aux conditions de la concurrence pure et parfaite."}, {"term": "Chômage conjoncturel", "definition": "Chômage lié aux fluctuations de l’activité économique, qui augmente en période de ralentissement ou de récession et diminue lors des phases de croissance"}, {"term": "Polarisation du marché du travail", "definition": "Processus par lequel la structure de l’emploi évolue vers une concentration croissante des emplois aux deux extrémités de l’échelle des qualifications et des salaires, accompagnée d’une érosion des emplois intermédiaires, souvent routiniers. (Goos et Manning)"}, {"term": "Chômage technologique", "definition": "Phénomène de destruction d’emplois lié au progrès technique. (Keynes)"}, {"term": "Théorie du déversement", "definition": "Les ouvriers non-qualifiés sont remplacés par des machines-outils. (Sauvy) voire aussi le futur sans emploi de Rifkin."}, {"term": "Travail indépendant", "definition": "Forme d’activité exercée sans lien de subordination juridique, en dehors du salariat classique, souvent sous le statut de micro-entrepreneur ou de freelance."}, {"term": "Ubérisation", "definition": "Mise en relation directe, via des plateformes numériques, de travailleurs indépendants et de clients pour des prestations standardisées et souvent ponctuelles (livraison, transport, services)."}, {"term": "Télétravail", "definition": "Forme d’organisation du travail dans laquelle l’activité est exercée à distance des locaux de l’employeur, grâce aux technologies de l’information et de la communication"}]}, {"name": "Ch. 14 — Politiques de l'emploi", "cards": [{"term": "Approche keynésienne", "definition": "L’approche keynésienne, issue de John Maynard Keynes, considère que le chômage résulte d’une insuffisance de la demande globale. Elle préconise donc des politiques de relance, notamment par la hausse des dépenses publiques ou le soutien au pouvoir d’achat, afin de stimuler l’activité et créer des emplois."}, {"term": "Approche néoclassique", "definition": "L’approche néoclassique considère que le chômage provient surtout de rigidités sur le marché du travail, comme des salaires trop élevés ou des réglementations excessives qui empêchent l’ajustement de l’offre et de la demande de travail. Elle préconise donc des politiques centrées sur l’offre visant à assouplir le marché du travail et à réduire le coût du travail afin de favoriser l’emploi."}, {"term": "Politiques de l'emploi", "definition": "Ensemble des interventions publiques sur le marché du travail, visant à en corriger les éventuels déséquilibres, et/ou à limiter les effets néfastes de ces derniers"}, {"term": "Politiques passives", "definition": "Politiques qui considèrent que le volume de travail n'est pas extensible : il faut donc le redistribuer ou le partager et indemniser ceux qui sont exclus du travail"}, {"term": "Politiques actives", "definition": "Politiques qui considèrent que le volume de travail est extensible : il faut donc stimuler l'accroissement de l'offre de travail ;"}, {"term": "Flexibilité du marché du travail", "definition": "La flexibilité du marché du travail consiste à permettre l'adaptation du coût et de la quantité de travail aux variations de la demande et des conditions de concurrence subies par les entreprises."}, {"term": "Flexisécurité", "definition": "Organisation du marché du travail qui vise à concilier la flexibilité de l’emploi pour les entreprises et la sécurité des parcours professionnels pour les travailleurs. Dans ce système, le licenciement est facilité pour les entreprises et les travailleurs qui perdent leur emploi bénéficient d'indemnités longues et importantes"}]}, {"name": "Ch. 15 — Inégalités", "cards": [{"term": "Inégalités", "definition": "Différences entre des individus ou des groupes sociaux qui sont socialement perçues comme injustes ou illégitimes"}, {"term": "Inégalités économiques", "definition": "Différences de distribution des actifs, du patrimoine ou du revenu entre les individus et/ou les populations"}, {"term": "Coefficient de Gini", "definition": "Indicateur synthétique permettant de mesurer le niveau d’inégalité d’une variable au sein d’une population donnée. Il varie entre 0, qui correspond à une situation d’égalité parfaite où tous les individus détiennent la même valeur de la variable considérée, et 1, qui représente une situation d’inégalité extrême dans laquelle un seul individu concentre l’ensemble de la variable"}, {"term": "Corube de Lorenz", "definition": "Courbe qui représente la répartition cumulée des revenus ou des patrimoines au sein d’une population"}, {"term": "Fractiles", "definition": "Seuils statistiques qui découpent une population en parts égales comme la médiane ou le rapport interdécile D9/D1"}, {"term": "Inégalités sociales", "definition": "Différences durables d’accès aux ressources, aux positions sociales et aux conditions de vie entre les individus ou les groupes sociaux individus au sein d’une société, notamment en matière d’éducation, de santé, d’emploi, de logement et de mobilité sociale."}, {"term": "Enjeux de la répartition primaire des revenus", "definition": "Conséquences économiques et sociales du partage de la valeur ajoutée entre les facteurs de production, principalement le travail et le capital, avant toute intervention de l’État, notamment en termes de niveau d’inégalités, de justice sociale, de cohésion sociale et de dynamique de croissance économique."}, {"term": "Inégalités de patrimoine (Piketty)", "definition": "Les inégalités de patrimoine sont généralement plus fortes et plus durables que celles de revenus,  l’héritage joue alors un rôle central dans la reproduction des inégalités, en renforçant les écarts entre générations,"}, {"term": "Pauvreté absolue", "definition": "Situation dans laquelle un individu ne dispose pas des ressources suffisantes pour satisfaire ses besoins fondamentaux (<2,15$/jour)"}, {"term": "Pauvreté relative", "definition": "Situation dans laquelle un individu dispose de ressources nettement inférieures au niveau de vie médian de la société dans laquelle il vit, inférieur à 60% du revenu médian en europe."}, {"term": "Risques sociaux", "definition": "Evénements aléatoires qui affectent la vie économique des individus en suscitant une diminution de leurs revenus ou en accroissant leurs dépenses, et qui constituent un désordre social auquel il convient de répondre : maladie, vieillesse, AT/MP, famille et chômage."}, {"term": "Protection sociale", "definition": "Ensemble des dépenses engagées pour couvrir les dépenses engagées dans le cadre des risques sociaux"}, {"term": "Libertarisme de Hayek", "definition": "Toute politique égalitariste mène donc au totalitarisme car elle implique des privations de libertés et des contraintes trop lourdes"}, {"term": "Libertarisme de Nozick", "definition": "La redistribution implique des prélèvements et donc une atteinte à la propriété privée des individus et à leur liberté de disposer de leurs revenus."}, {"term": "Approche fataliste de Okun", "definition": "Chercher à réduire fortement les inégalités par la redistribution peut nuire à l’efficacité économique, en raison des coûts et des contraintes fiscales et sociales qu’elle implique"}, {"term": "Approche de Rawls", "definition": "Rawls justifie l’intervention de l’État et la redistribution des richesses à condition qu’il compense les inégalités de départ. C’est ce qu’il nomme la justice comme équité"}, {"term": "Coût sociale d'Atkinson", "definition": "Les inégalités possèdent en effet un coût social très important, notamment en créant des tensions sociales et politiques"}, {"term": "Approche de Stiglitz", "definition": "Les inégalités résultent de la recherche de rentes et de choix politiques favorisant les plus riches, et elles freinent la croissance en affaiblissant la classe moyenne, en réduisant les recettes fiscales, en limitant le capital humain et en dégradant la cohésion sociale."}, {"term": "Politiques de redistribution", "definition": "Interventions publiques destinées à corriger les inégalités issues du marché et à protéger les individus contre les risques sociaux."}, {"term": "Objectifs de la redistribution", "definition": "Justice sociale / Croissance / Contarcyclique"}, {"term": "Instruments de la redistribution", "definition": "Redistribution monétaire ou en nature"}, {"term": "Redistribution horizontale", "definition": "Maintenir les ressources des individus atteints par des risques sociaux comme par exemple la maladie ou le chômage"}, {"term": "Redistribution verticale", "definition": "Réduire les inégalités de revenus ou de patrimoine"}, {"term": "Modèle beveridgien", "definition": "Logique d’assistance universelle, visant à garantir à tous les individus un niveau de protection minimal, indépendamment de leur statut professionnel. Il est principalement financé par l’impôt et privilégie des prestations forfaitaires, dans un objectif de lutte contre la pauvreté et l’exclusion."}, {"term": "Modèle bismarckien", "definition": "Logique d’assurance, dans laquelle les prestations sociales sont financées principalement par des cotisations sociales et proportionnelles aux revenus d’activité. Les droits sociaux dépendent du statut professionnel et de la participation au marché du travail, l’objectif étant de maintenir le niveau de vie en cas de risque social (maladie, chômage, vieillesse)."}, {"term": "Modèle d'Esping Andersen", "definition": "Libéral /social-démocrate / conservateur"}]}, {"name": "Ch. 16 — Commerce international", "cards": [{"term": "Internationalisation", "definition": "Processus d’ouverture croissante des économies qui se traduit par une augmentation des échanges de biens et services"}, {"term": "Mondialisation", "definition": "Processus multidimensionnel caractérisé par l’intensification des échanges de biens et services, la forte circulation des capitaux financiers et le développement des investissements directs étrangers à travers les firmes multinationales."}, {"term": "FMN", "definition": "Une firme multinationale est une entreprise qui organise et structure ses activités au niveau mondial et donc possède au moins, en plus de son unité légale sur son territoire d’origine, au moins une unité légale à l’étranger"}, {"term": "Transnationalisation", "definition": "Organisation des activités productives à l’échelle mondiale par des acteurs privés, principalement des firmes multinationales"}, {"term": "Globalisation financière", "definition": "Intégration croissante des marchés de capitaux à l’échelle mondiale."}, {"term": "Globalisation de l'information", "definition": "Circulation mondiale, quasi instantanée, des données, des informations et des contenus grâce aux technologies numériques"}, {"term": "Balance des transactions courantes", "definition": "Compte de la balance des paiements qui retrace l’ensemble des échanges économiques réels entre un pays et le reste du monde sur une période donnée. Elle enregistre les flux de biens, de services, de revenus primaires (rémunérations des facteurs de production, intérêts, dividendes) et de revenus secondaires (transferts courants sans contrepartie, comme l’aide internationale ou les envois de fonds des migrants)."}, {"term": "Solde de la balance commerciale", "definition": "Différence entre la valeur des exportations de biens et celle des importations de biens d’un pays sur une période donnée"}, {"term": "Solde de la BTC", "definition": "Différence entre l’ensemble des recettes et des dépenses courantes d’un pays avec le reste du monde sur une période donnée"}, {"term": "Taux d'ouverture", "definition": "Le taux d’ouverture d’une économie mesure le degré d’intégration d’un pays dans les échanges internationaux. Il indique la part des échanges extérieurs (exportations et importations) dans la richesse produite par le pays."}, {"term": "Fragmentation des chaînes de valeur mondiale", "definition": "Fait de décomposer un processus productif en plusieurs étapes distinctes, réalisées dans différents pays selon leurs avantages comparatifs (coûts du travail, compétences, ressources, fiscalité, proximité des marchés)."}, {"term": "IDE", "definition": "Les  Investissements directs étrangers  sont des opérations financières réalisées par un agent économique dans le but d’exercer un contrôle durable sur une entreprise ou une unité de production située à l’étranger"}, {"term": "Polarisation du commerce international", "definition": "Concentration des échanges mondiaux autour d’un nombre limité de pays ou de pôles économiques dominants, qui réalisent l’essentiel du commerce international et structurent les flux d’échanges"}, {"term": "Régionalisation des échanges", "definition": "Tendance à l’intensification des échanges commerciaux entre pays appartenant à une même région géographique, au détriment (ou plus rapidement) des échanges avec le reste du monde"}]}, {"name": "Ch. 17 — Politiques extérieures", "cards": [{"term": "Libre échange", "definition": "Doctrine économique qui vise à limiter les obstacles à la circulation des biens, des services et des capitaux entre les économies nationales"}, {"term": "Avantages comparatifs", "definition": "Chaque pays a intérêt à se spécialiser dans la production pour laquelle il est relativement le plus efficace, même s’il est moins productif que ses partenaires dans toutes les activités. L’important n’est donc pas l’avantage absolu, mais le coût d’opportunité de chaque production. (Ricardo)."}, {"term": "Théorème HOS", "definition": "Le libre-échange tend donc à une égalisation des rémunérations des facteurs entre pays (Hecksher, Olin, Samuelson)"}, {"term": "Demande différenciée", "definition": "Le libre échange permet de produire pour échanger échangeant des biens différenciés de même nature pour répondre à la demande différenciée des consommateurs. (Lassudrie-Duchêne)"}, {"term": "Libre échange et innovation", "definition": "Krugman montre que le libre-échange, en intensifiant la pression concurrentielle entre firmes, peut pousser les pays du Nord à innover"}, {"term": "Libre échange et croissance", "definition": "Selon Paul Krugman, le libre-échange génère des gains non seulement grâce aux avantages comparatifs mais aussi via les économies d’échelle et la différenciation des produits en situation de concurrence imparfaite. Il permet aux entreprises d’accéder à des marchés plus vastes, favorisant le commerce intra-branche, la baisse des prix, l’augmentation du pouvoir d’achat et, in fine, la croissance économique."}, {"term": "Protectionnisme", "definition": "Doctrine économique qui a pour but de limiter l’accès aux marchés nationaux pour les producteurs étrangers"}, {"term": "Industries naissantes", "definition": "Le protectionnisme est nécessaire pour favoriser l’émergence et la consolidation de l’industrie nationale d'après List."}, {"term": "Industries vieillissantes", "definition": "Le protectionnisme serait également nécessaire pour protéger les industries vieillissantes ou fondamentales de la mondialisation le temps de les aider dans leur reconversion selon Nicholas Kaldor (1908-1986)."}, {"term": "Politique stratégique", "definition": "Le protectionnisme peut être nécessaire dans le cadre d’une politique commerciale stratégique, comme le montre Paul Krugman (1987). Dans certains secteurs caractérisés par des rendements croissants, des coûts fixes élevés et une concurrence imparfaite, l’intervention de l’État peut permettre aux entreprises nationales de conquérir ou de préserver des parts de marché au détriment de concurrents étrangers. Cette intervention prend notamment la forme de subventions à l’exportation ou d’aides à la recherche et développement, afin de favoriser l’innovation, source d’avantages comparatifs au niveau mondial"}, {"term": "Décollage", "definition": "Selon Samir Amin (1931-2018), les échanges internationaux s’inscrivent dans une logique d’échange inégal, au sein de laquelle les pays du Sud sont spécialisés dans des productions à faible valeur ajoutée, fortement intensives en travail peu qualifié et en ressources primaires; Dans cette perspective, le protectionnisme permettrait aux pays du Sud de rompre avec cette spécialisation défavorable, de développer des activités industrielles et technologiques, et de créer des avantages comparatifs."}, {"term": "Compétitivité", "definition": "Capacité d’une entreprise ou d’une économie nationale à accroître ses parts de marché dans le cadre de l’économie domestique (économie nationale) ou de l’économie mondiale."}, {"term": "Compétitivité prix", "definition": "Capacité à proposer, sur le marché, des produits à des prix inférieurs à ceux de ses concurrents."}, {"term": "Compétitivité structurelle ou hors prix", "definition": "Capacité à imposer ses produits ou services indépendamment de leur prix"}, {"term": "Politique de compétitivité", "definition": "Ensemble des mesures mises en œuvre par les pouvoirs publics afin d’améliorer la capacité des entreprises nationales à faire face à la concurrence, tant sur le marché intérieur qu’international"}, {"term": "Politiques d'attractivité", "definition": "Ensemble des mesures mises en œuvre par les pouvoirs publics afin de faciliter l’implantation des investissements directs étrangers (IDE) et d’attirer les facteurs de production mobiles sur un territoire. Elles reposent principalement sur des politiques structurelles, visant à améliorer l’environnement économique, institutionnel et social du territoire"}]}, {"name": "Ch. 18 — Gouvernance", "cards": [{"term": "Régulation mondiale", "definition": "Gestion des biens, des risques et des déséquilibres globaux que le marché et les États ne peuvent traiter seuls."}, {"term": "Biens publics mondiaux", "definition": "Les biens publics mondiaux sont des biens qui présentent, à l’échelle mondiale, les deux caractéristiques des biens publics : non rivalité et non excluabilité."}, {"term": "Coopération internationale", "definition": "Action coordonnée des États visant à gérer des enjeux communs qui dépassent les frontières nationales, tels que les biens publics mondiaux ou les risques globaux"}, {"term": "Multilatéralisme", "definition": "Principe d’organisation selon lequel tout avantage accordé à un pays doit être automatiquement accordé à tous les pays membres du GATT."}, {"term": "OMC - organisation mondiale du commerce", "definition": "Institution en charge de la « régulation » du commerce mondial"}, {"term": "Gouvernance mondiale du commerce", "definition": "Organisation et régulation des échanges internationaux à travers des règles communes, des négociations multilatérales et des mécanismes de règlement des différends, principalement sous l’égide de l’Organisation mondiale du commerce."}, {"term": "Risque systémique", "definition": "Risque qu’une défaillance localisée (banque, marché, pays) se propage à l’ensemble du système financier mondial"}, {"term": "Gouvernance financière internationale", "definition": "Ensemble des règles, institutions et mécanismes de coordination mis en place pour assurer la stabilité du système financier mondial et prévenir les risques systémiques"}, {"term": "Gouvernance environnementale mondiale", "definition": "Ensemble des accords, institutions, instruments économiques et normes visant à protéger les biens environnementaux mondiaux et à assurer un développement durable."}]}];
+
+/* ════════════════════════════════════════════════════
+   STATE
+════════════════════════════════════════════════════ */
+let currentChapter = 0, currentIndex = 0, cards = [], isFlipped = false, mode = 'card';
+let scores = {};
+let sessionScore = 0, combo = 0, bestCombo = 0;
+let lives = 3, jokers = 2, isBonus = false, gameIsOver = false;
+let earnedBadges = [];
+let mission = null, missionSuccessShown = false;
+let timerInterval = null, timerSeconds = 8, timerRemaining = 8;
+let toastTimer = null, badgeTimer = null;
+let gameMode = 'revision'; // 'revision' | 'rapide'
+let pendingChapterIdx = 0; // chapitre en attente de lancement
+
+/* ════════════════════════════════════════════════════
+   MODE EXAMEN — thèmes & état
+════════════════════════════════════════════════════ */
+/* Regroupement des 18 chapitres en 7 thèmes (indices 0-based dans DATA) */
+const EXAM_THEMES = [
+  { name: "Thème 1 : Appréhender les fondements de l'activité économique",                 color: '#c9a96e', chapters: [0, 1] },
+  { name: 'Thème 2 : Comprendre le fonctionnement des marchés',                            color: '#5ecb8a', chapters: [2, 3] },
+  { name: "Thème 3 : Identifier les opérations de financement",                            color: '#8b6fd4', chapters: [4, 5] },
+  { name: "Thème 4 : Identifier les enjeux de la croissance économique",                   color: '#5aa9e6', chapters: [6, 7, 8] },
+  { name: 'Thème 5 : Analyser la régulation publique',                                     color: '#e0a96b', chapters: [9, 10, 11] },
+  { name: 'Thème 6 : Analyser les déséquilibres sociaux et leur régulation',               color: '#e06b9c', chapters: [12, 13, 14] },
+  { name: 'Thème 7 : Identifier les effets et les enjeux de la mondialisation des économies', color: '#e06b6b', chapters: [15, 16, 17] },
+];
+let examMode = 'revision';
+let examSelected = EXAM_THEMES.map(() => true); // tous cochés par défaut
+let examChapterIdx = null; // emplacement synthétique dans DATA
+
+/* ════════════════════════════════════════════════════
+   INIT — affiche la page d'accueil, ne démarre pas le jeu
+════════════════════════════════════════════════════ */
+function init() {
+  DATA.forEach((_, i) => { scores[i] = { right: new Set(), wrong: new Set() }; });
+  buildSidebar();
+  buildHomeChapters();
+  // Pas de selectChapter(0) ici — le jeu démarre seulement au clic
+}
+
+/* Construit la grille de chapitres sur la page d'accueil */
+function buildHomeChapters() {
+  document.getElementById('chaptersGrid').innerHTML = DATA.map((ch, i) => {
+    // Extrait le numéro et le nom du chapitre
+    const match = ch.name.match(/Ch\. (\d+) — (.+)/);
+    const num   = match ? `Chapitre ${match[1]}` : ch.name;
+    const name  = match ? match[2] : ch.name;
+    return `
+      <div class="ch-card" id="homeChBtn${i}" onclick="startGame(${i})">
+        <div class="ch-num">${num}</div>
+        <div class="ch-name">${name}</div>
+        <div class="ch-count">${ch.cards.length} définitions</div>
+      </div>`;
+  }).join('');
+}
+
+/* Lance le jeu pour le chapitre sélectionné — affiche d'abord le choix de mode */
+function startGame(idx) {
+  pendingChapterIdx = idx;
+  document.querySelectorAll('.ch-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById(`homeChBtn${idx}`).classList.add('selected');
+  // Afficher le nom du chapitre dans la modale
+  document.getElementById('msChapterName').textContent = DATA[idx].name;
+  // Réinitialiser la sélection sur Révision par défaut
+  selectGameMode('revision');
+  document.getElementById('modeSelect').classList.add('show');
+}
+
+/* Sélectionne visuellement un mode sans lancer */
+function selectGameMode(m) {
+  gameMode = m;
+  document.getElementById('msBtnRevision').classList.toggle('selected', m === 'revision');
+  document.getElementById('msBtnRapide').classList.toggle('selected', m === 'rapide');
+}
+
+/* Lance effectivement le jeu après confirmation du mode */
+function launchWithMode() {
+  document.getElementById('modeSelect').classList.remove('show');
+  document.getElementById('homePage').classList.add('hidden');
+  document.getElementById('gameHeader').style.display = 'flex';
+  document.getElementById('gameApp').style.display    = 'flex';
+  document.querySelector('.page-h1').classList.remove('hidden');
+  // Mettre à jour le tag de mode dans la barre de progression
+  const tag = document.getElementById('spModeTag');
+  if (gameMode === 'rapide') { tag.textContent = '⚡ Rapide'; tag.className = 'sp-mode-tag rapide'; }
+  else                       { tag.textContent = '🧠 Révision'; tag.className = 'sp-mode-tag'; }
+  selectChapter(pendingChapterIdx);
+}
+
+/* Annule la sélection de mode, retour à l'accueil */
+function cancelModeSelect() {
+  document.getElementById('modeSelect').classList.remove('show');
+}
+
+/* Retour à la page d'accueil */
+function goHome() {
+  stopTimer();
+  document.getElementById('sessionEnd').classList.remove('show');
+  document.getElementById('gameOver').classList.remove('show');
+  document.getElementById('modeSelect').classList.remove('show');
+  document.getElementById('gameHeader').style.display = 'none';
+  document.getElementById('gameApp').style.display    = 'none';
+  document.querySelector('.page-h1').classList.add('hidden');
+  document.getElementById('homePage').classList.remove('hidden');
+  gameIsOver = false;
+  mode = 'card';
+}
+
+/* ════════════════════════════════════════════════════
+   MODE EXAMEN — logique
+════════════════════════════════════════════════════ */
+function themeCardCount(t) {
+  return t.chapters.reduce((sum, ci) => sum + DATA[ci].cards.length, 0);
+}
+
+/* Construit la liste des thèmes cochables dans la modale */
+function buildExamThemes() {
+  document.getElementById('examThemes').innerHTML = EXAM_THEMES.map((t, i) => {
+    const count = themeCardCount(t);
+    const chLabels = t.chapters.map(ci => DATA[ci].name.match(/Ch\. (\d+)/)?.[1] || (ci + 1)).join(', ');
+    return `
+      <div class="exam-theme ${examSelected[i] ? 'selected' : ''}" id="examTheme${i}" onclick="toggleExamTheme(${i})">
+        <span class="exam-dot" style="background:${t.color}"></span>
+        <div class="exam-theme-info">
+          <div class="exam-theme-name">${t.name}</div>
+          <div class="exam-theme-meta">Ch. ${chLabels} · ${count} cartes</div>
+        </div>
+        <span class="exam-check">✓</span>
+      </div>`;
+  }).join('');
+}
+
+function openExamModal() {
+  buildExamThemes();
+  refreshExamUI();
+  document.getElementById('examModal').classList.add('show');
+}
+function closeExamModal() {
+  document.getElementById('examModal').classList.remove('show');
+}
+
+function toggleExamTheme(i) {
+  examSelected[i] = !examSelected[i];
+  refreshExamUI();
+}
+function toggleExamAll() {
+  const allOn = examSelected.every(Boolean);
+  examSelected = EXAM_THEMES.map(() => !allOn);
+  refreshExamUI();
+}
+function setExamMode(m) {
+  examMode = m;
+  document.getElementById('examModeRevision').classList.toggle('selected', m === 'revision');
+  document.getElementById('examModeRapide').classList.toggle('selected', m === 'rapide');
+}
+
+/* Met à jour cases cochées + compteur en temps réel */
+function refreshExamUI() {
+  EXAM_THEMES.forEach((_, i) => {
+    document.getElementById('examTheme' + i)?.classList.toggle('selected', examSelected[i]);
+  });
+  const allOn = examSelected.every(Boolean);
+  document.getElementById('examAll').classList.toggle('selected', allOn);
+
+  const total = EXAM_THEMES.reduce((sum, t, i) => sum + (examSelected[i] ? themeCardCount(t) : 0), 0);
+  document.getElementById('examCount').textContent = total;
+  document.getElementById('examGo').disabled = total === 0;
+}
+
+/* Rassemble les cartes du périmètre, mélange et lance la session */
+function launchExam() {
+  const chapters = [];
+  EXAM_THEMES.forEach((t, i) => { if (examSelected[i]) chapters.push(...t.chapters); });
+  if (!chapters.length) return;
+
+  // Rassemble toutes les cartes des chapitres sélectionnés
+  let pool = [];
+  chapters.forEach(ci => { pool = pool.concat(DATA[ci].cards); });
+
+  // Mélange (Fisher-Yates)
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+
+  // Emplacement synthétique dans DATA pour réutiliser toute la mécanique du jeu
+  const selectedNames = EXAM_THEMES.filter((_, i) => examSelected[i]).length;
+  const examName = selectedNames === EXAM_THEMES.length
+    ? 'Mode Examen — Tous les chapitres'
+    : `Mode Examen — ${selectedNames} thème(s)`;
+
+  if (examChapterIdx === null) {
+    examChapterIdx = DATA.length;
+    DATA.push({ name: examName, cards: pool });
+  } else {
+    DATA[examChapterIdx] = { name: examName, cards: pool };
+  }
+  scores[examChapterIdx] = { right: new Set(), wrong: new Set() };
+
+  // Aligne le mode de jeu sur le choix de l'examen
+  gameMode = examMode;
+
+  // Affichage du jeu
+  document.getElementById('examModal').classList.remove('show');
+  document.getElementById('homePage').classList.add('hidden');
+  document.getElementById('gameHeader').style.display = 'flex';
+  document.getElementById('gameApp').style.display    = 'flex';
+  document.querySelector('.page-h1').classList.remove('hidden');
+
+  const tag = document.getElementById('spModeTag');
+  if (gameMode === 'rapide') { tag.textContent = '⚡ Rapide'; tag.className = 'sp-mode-tag rapide'; }
+  else                       { tag.textContent = '🧠 Révision'; tag.className = 'sp-mode-tag'; }
+
+  selectChapter(examChapterIdx);
+}
+
+
+function buildSidebar() {
+  document.getElementById('chapterList').innerHTML = DATA.map((ch, i) => `
+    <button class="chapter-btn ${i===0?'active':''}" id="chBtn${i}" onclick="selectChapter(${i})">
+      <span>${ch.name}</span><span class="cbadge">${ch.cards.length}</span>
+    </button>`).join('');
+}
+
+/* ════════════════════════════════════════════════════
+   CHAPTER SELECTION
+════════════════════════════════════════════════════ */
+function selectChapter(idx) {
+  stopTimer();
+  currentChapter = idx; currentIndex = 0;
+  cards = [...DATA[idx].cards];
+  isFlipped = false; sessionScore = 0; combo = 0; bestCombo = 0;
+  lives = 3; jokers = 2; gameIsOver = false; earnedBadges = []; _prevLives = 3;
+  scores[idx] = { right: new Set(), wrong: new Set() };
+  document.querySelectorAll('.chapter-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  document.getElementById('chapterTitleBar').textContent = DATA[idx].name;
+  document.getElementById('badgesRack').innerHTML = '';
+  updateHUD(); renderCard(); updateScoreBar(); startMission();
+  if (mode === 'list') renderList();
+}
+
+/* ════════════════════════════════════════════════════
+   RENDER CARD
+════════════════════════════════════════════════════ */
+function renderCard() {
+  if (!cards.length || gameIsOver) return;
+  stopTimer();
+  const card = cards[currentIndex];
+  const s = scores[currentChapter];
+  const seen = s.right.has(card.term) || s.wrong.has(card.term);
+  isBonus = !seen && Math.random() < 0.15;
+
+  document.getElementById('cardTerm').textContent = card.term;
+  document.getElementById('cardDef').textContent  = card.definition;
+  document.getElementById('cardIndex').textContent = `${currentIndex+1} / ${cards.length}`;
+  document.getElementById('prevBtn').disabled = currentIndex === 0;
+  document.getElementById('nextBtn').disabled = currentIndex === cards.length-1;
+
+  // Bonus tag
+  const old = document.querySelector('.bonus-tag');
+  if (old) old.remove();
+  if (isBonus) {
+    const tag = document.createElement('div');
+    tag.className = 'bonus-tag'; tag.textContent = '🎁 BONUS ×2';
+    document.querySelector('.flashcard-scene').appendChild(tag);
+    document.getElementById('cardHint').textContent = 'Question bonus — bonne réponse = ×2 points !';
+  } else {
+    document.getElementById('cardHint').textContent = 'Cliquez pour révéler la définition';
+  }
+
+  // Reset
+  const fc = document.getElementById('flashcard');
+  fc.classList.remove('flipped','shake');
+  document.getElementById('cardBack').classList.remove('flash-green','flash-red');
+  isFlipped = false;
+  document.getElementById('feedbackRow').style.display = 'none';
+  document.getElementById('fbWrong').classList.remove('active');
+  document.getElementById('fbRight').classList.remove('active');
+  startTimer();
+}
+
+/* ════════════════════════════════════════════════════
+   FLIP / NAV
+════════════════════════════════════════════════════ */
+function flipCard() {
+  if (gameIsOver) return;
+  isFlipped = !isFlipped;
+  document.getElementById('flashcard').classList.toggle('flipped', isFlipped);
+  if (isFlipped) {
+    document.getElementById('feedbackRow').style.display = 'flex';
+    const s = scores[currentChapter], id = cards[currentIndex].term;
+    document.getElementById('fbWrong').classList.toggle('active', s.wrong.has(id));
+    document.getElementById('fbRight').classList.toggle('active', s.right.has(id));
+    updateJokerBtn();
+  } else {
+    document.getElementById('feedbackRow').style.display = 'none';
+  }
+}
+function prevCard() { if (currentIndex > 0) { stopTimer(); currentIndex--; renderCard(); updateScoreBar(); } }
+function nextCard() { stopTimer(); if (currentIndex < cards.length-1) { currentIndex++; renderCard(); updateScoreBar(); } else showSessionEnd(); }
+
+/* Passer une carte manuellement = mauvaise réponse (pénalité identique à une erreur) */
+function skipCard() {
+  if (gameIsOver) return;
+  if (!isFlipped) {
+    document.getElementById('flashcard').classList.add('flipped');
+    isFlipped = true;
+    document.getElementById('feedbackRow').style.display = 'flex';
+  }
+  toast('⏭️ Carte passée = erreur −5 pts', 'red');
+  markCard(false);
+}
+
+/* ════════════════════════════════════════════════════
+   TIMER
+════════════════════════════════════════════════════ */
+function startTimer() {
+  const len = cards[currentIndex].definition.length;
+  const base = len > 200 ? 20 : len > 100 ? 12 : 8;
+  timerSeconds = gameMode === 'rapide' ? Math.round(base * 0.5) : base;
+  timerRemaining = timerSeconds;
+  updateTimerBar();
+  timerInterval = setInterval(() => {
+    timerRemaining--;
+    updateTimerBar();
+    if (timerRemaining <= 0) { clearInterval(timerInterval); if (!isFlipped) handleTimeout(); }
+  }, 1000);
+}
+function stopTimer() { clearInterval(timerInterval); timerInterval = null; resetTimerBar(); }
+function resetTimerBar() {
+  const f = document.getElementById('timerFill');
+  f.style.width = '100%'; f.className = '';
+}
+function updateTimerBar() {
+  const pct = (timerRemaining / timerSeconds) * 100;
+  const f = document.getElementById('timerFill');
+  f.style.width = pct + '%';
+  // Couleur + pulse selon urgence
+  if (timerRemaining <= 3) {
+    f.className = 'danger pulse';
+  } else if (pct <= 25) {
+    f.className = 'danger';
+  } else if (pct <= 50) {
+    f.className = 'warn';
+  } else {
+    f.className = '';
+  }
+}
+function handleTimeout() {
+  if (gameIsOver) return;
+  document.getElementById('flashcard').classList.add('flipped');
+  isFlipped = true;
+  document.getElementById('feedbackRow').style.display = 'flex';
+  markCard(false, true);
+}
+
+/* ════════════════════════════════════════════════════
+   MARK CARD
+════════════════════════════════════════════════════ */
+function markCard(correct, isTimeout = false) {
+  if (gameIsOver) return;
+  stopTimer();
+  const id = cards[currentIndex].term;
+  const s  = scores[currentChapter];
+  const cb = document.getElementById('cardBack');
+  const fc = document.getElementById('flashcard');
+  const fast = timerRemaining >= timerSeconds * 0.6;
+
+  if (correct) {
+    s.right.add(id); s.wrong.delete(id);
+    let pts = isBonus ? 20 : 10;
+    if (fast) pts += 5;
+    pts += combo * 2;
+    // Bonus combo ≥ 5
+    if (combo >= 5) pts += 5;
+    sessionScore += pts;
+    combo++; if (combo > bestCombo) bestCombo = combo;
+
+    // Feedback visuel carte — correct
+    cb.classList.add('correct');
+    setTimeout(() => cb.classList.remove('correct'), 500);
+
+    document.getElementById('fbRight').classList.add('active');
+    document.getElementById('fbWrong').classList.remove('active');
+
+    // Combo banner aux paliers 5, 10, 15, 20
+    if ([5,10,15,20].includes(combo)) showComboBanner(combo);
+
+    toast(isBonus ? `🎁 BONUS ! +${pts} pts` : fast ? `⚡ Rapide ! +${pts} pts` : getPosMsg(combo), 'green');
+    checkBadges(true, fast);
+    playSound('correct');
+
+  } else {
+    s.wrong.add(id); s.right.delete(id);
+    const prevCombo = combo;
+    combo = 0; lives--;
+
+    // Pénalité score : -5 pts, plancher à 0
+    sessionScore = Math.max(0, sessionScore - 5);
+
+    // Feedback visuel carte — wrong
+    cb.classList.add('wrong-answer');
+    fc.classList.add('shake-strong');
+    setTimeout(() => { cb.classList.remove('wrong-answer'); fc.classList.remove('shake-strong'); }, 500);
+
+    // Flash rouge global (perte de vie)
+    triggerLifeFlash();
+
+    document.getElementById('fbWrong').classList.add('active');
+    document.getElementById('fbRight').classList.remove('active');
+
+    // Message combo perdu si on en avait un
+    const msg = prevCombo >= 3
+      ? `💔 Combo ×${prevCombo} perdu ! −5 pts ${isTimeout ? '⏱️ Temps écoulé' : getNegMsg()}`
+      : isTimeout ? '⏱️ Temps écoulé ! −5 pts' : `${getNegMsg()} −5 pts`;
+    toast(msg, 'red');
+    checkBadges(false, false);
+    playSound('wrong');
+  }
+
+  updateHUD(); updateScoreBar(); updateMission(correct);
+  if (lives <= 0) { setTimeout(showGameOver, 580); return; }
+  setTimeout(() => { if (currentIndex < cards.length-1) nextCard(); else showSessionEnd(); }, 480);
+}
+
+/* ════════════════════════════════════════════════════
+   JOKER — fonctionne à tout moment (carte retournée ou non)
+════════════════════════════════════════════════════ */
+function useJoker() {
+  if (jokers <= 0 || gameIsOver) return;
+  jokers--;
+  stopTimer();
+
+  // Remettre la carte face visible si elle était retournée
+  const fc = document.getElementById('flashcard');
+  fc.classList.remove('flipped', 'shake', 'shake-strong');
+  document.getElementById('cardBack').classList.remove('correct', 'wrong-answer', 'flash-green', 'flash-red');
+  isFlipped = false;
+  document.getElementById('feedbackRow').style.display = 'none';
+
+  toast('🃏 Joker ! Carte passée sans pénalité — combo conservé', 'purple');
+  updateHUD(); updateJokerBtn();
+
+  // Passer à la carte suivante sans toucher au combo ni aux vies
+  setTimeout(() => { if (currentIndex < cards.length - 1) nextCard(); else showSessionEnd(); }, 380);
+}
+function updateJokerBtn() {
+  const btn = document.getElementById('jokerBtn');
+  btn.textContent = `🃏 Joker (${jokers})`; btn.disabled = jokers <= 0;
+  document.getElementById('jokerHud').classList.toggle('empty', jokers <= 0);
+}
+
+/* ════════════════════════════════════════════════════
+   HUD
+════════════════════════════════════════════════════ */
+function updateHUD() {
+  bump('scoreDisplay', sessionScore);
+
+  // Combo — animation scale si combo monte
+  const cd = document.getElementById('comboDisplay');
+  const prevVal = cd.textContent;
+  cd.textContent = `×${combo}`;
+  if (combo > 0 && cd.textContent !== prevVal) {
+    cd.classList.remove('combo-up');
+    void cd.offsetWidth;
+    cd.classList.add('combo-up');
+    setTimeout(() => cd.classList.remove('combo-up'), 300);
+  }
+  document.getElementById('comboBlock').classList.toggle('hot', combo >= 5);
+
+  // Vies — rendu avec animation sur le cœur perdu
+  renderHearts();
+
+  document.getElementById('jokerDisplay').textContent = `🃏×${jokers}`;
+  document.getElementById('jokerHud').classList.toggle('empty', jokers <= 0);
+}
+
+/* Affiche les cœurs — anime le dernier cœur perdu */
+let _prevLives = 3; // Suivi des vies pour l'animation de perte de cœur
+function renderHearts() {
+  const el = document.getElementById('heartsDisplay');
+  if (lives < _prevLives) {
+    // Un cœur vient d'être perdu — animer sa disparition
+    const hearts = '❤️'.repeat(Math.max(0, lives));
+    const lost   = `<span class="heart-lost">❤️</span>`;
+    const dead   = '🖤'.repeat(Math.max(0, 3 - lives - 1));
+    el.innerHTML = hearts + lost + dead;
+    setTimeout(() => {
+      el.textContent = '❤️'.repeat(Math.max(0,lives)) + '🖤'.repeat(Math.max(0,3-lives));
+    }, 420);
+  } else {
+    el.textContent = '❤️'.repeat(Math.max(0,lives)) + '🖤'.repeat(Math.max(0,3-lives));
+  }
+  _prevLives = lives;
+}
+function bump(id, val) {
+  const el = document.getElementById(id);
+  el.textContent = val; el.classList.remove('bump');
+  void el.offsetWidth; el.classList.add('bump');
+}
+
+/* ════════════════════════════════════════════════════
+   MESSAGES
+════════════════════════════════════════════════════ */
+function getPosMsg(c) {
+  if (c >= 10) return `🔥 ×${c} INCROYABLE !`;
+  if (c >= 7)  return `⚡ ×${c} En feu !`;
+  if (c >= 5)  return `🎯 ×${c} Excellent !`;
+  if (c >= 3)  return `✨ ×${c} Continue !`;
+  return ['Bravo !','Parfait !','Correct !','Bien joué !'][Math.floor(Math.random()*4)];
+}
+function getNegMsg() {
+  return ["Pas cette fois…","À retravailler !","Presque !","Continue d'essayer !"][Math.floor(Math.random()*4)];
+}
+
+/* ════════════════════════════════════════════════════
+   BADGES
+════════════════════════════════════════════════════ */
+const BADGES = [
+  { id:'combo5',   check:()=>combo>=5,                                    emoji:'🔥', title:'Combo ×5 !',          sub:'Tu enchaînes !' },
+  { id:'combo10',  check:()=>combo>=10,                                   emoji:'⚡', title:'Combo ×10 !',         sub:'Inarrêtable !' },
+  { id:'combo15',  check:()=>combo>=15,                                   emoji:'🌟', title:'Combo ×15 !',         sub:'Légendaire !' },
+  { id:'right10',  check:()=>scores[currentChapter].right.size>=10,       emoji:'🧠', title:'10 bonnes réponses',  sub:'Bon travail !' },
+  { id:'right20',  check:()=>scores[currentChapter].right.size>=20,       emoji:'🏅', title:'20 bonnes réponses',  sub:'Impressionnant !' },
+  { id:'score100', check:()=>sessionScore>=100,                           emoji:'💯', title:'100 points !',        sub:'Objectif atteint !' },
+  { id:'score300', check:()=>sessionScore>=300,                           emoji:'🏆', title:'300 points !',        sub:'Performance de haut niveau !' },
+  { id:'speed',    check:(ok,fast)=>ok&&fast,                             emoji:'⚡', title:'Réponse rapide !',    sub:'Moins de 40% du temps utilisé' },
+];
+function checkBadges(ok, fast) {
+  BADGES.forEach(def => {
+    if (earnedBadges.includes(def.id)) return;
+    const pass = def.id === 'speed' ? def.check(ok, fast) : def.check();
+    if (pass) {
+      earnedBadges.push(def.id);
+      showBadgePopup(def);
+      addRack(def);
+    }
+  });
+}
+function showBadgePopup({emoji,title,sub,id}) {
+  clearTimeout(badgeTimer);
+  const p = document.getElementById('badgePopup');
+  document.getElementById('bpEmoji').textContent = emoji;
+  document.getElementById('bpTitle').textContent = title;
+  document.getElementById('bpSub').textContent   = sub;
+  p.className = (id==='speed'||id.startsWith('right')) ? 'show gcol' : 'show';
+  badgeTimer = setTimeout(() => p.className='', 2200);
+}
+function addRack({emoji,title}) {
+  const el = document.createElement('div');
+  el.className='rack-badge'; el.textContent=`${emoji} ${title}`;
+  document.getElementById('badgesRack').appendChild(el);
+}
+
+/* ════════════════════════════════════════════════════
+   TOAST
+════════════════════════════════════════════════════ */
+function toast(msg, cls) {
+  const t = document.getElementById('toast');
+  clearTimeout(toastTimer);
+  t.textContent = msg; t.className = `show ${cls||''}`;
+  toastTimer = setTimeout(() => t.className='', 1750);
+}
+
+/* ════════════════════════════════════════════════════
+   MISSIONS
+════════════════════════════════════════════════════ */
+function generateMission(total) {
+  const types = ['precision','combo','score','speed'];
+  const type  = types[Math.floor(Math.random()*types.length)];
+  let target, label, icon;
+  if (type==='precision') {
+    const r = total<=10?.9:total<=19?.8:.7;
+    target=Math.max(1,Math.round(total*r)); icon='🎯';
+    label=`Obtenir <strong>${target}/${total}</strong> bonnes réponses`;
+  } else if (type==='combo') {
+    const r = total<=10?.7:total<=19?.5:.35;
+    target=Math.max(2,Math.round(total*r)); icon='🔥';
+    label=`Atteindre un combo de <strong>×${target}</strong>`;
+  } else if (type==='score') {
+    target=total*(total<=10?12:total<=19?11:10); icon='⭐';
+    label=`Atteindre <strong>${target} points</strong>`;
+  } else {
+    target=Math.max(2,Math.round(total*.4)); icon='⚡';
+    label=`Répondre vite à <strong>${target} questions</strong>`;
+  }
+  return {type,target,current:0,label,icon,done:false,failed:false,speedCount:0};
+}
+function startMission() {
+  mission=generateMission(cards.length); missionSuccessShown=false; renderMission();
+}
+function updateMission(correct) {
+  if (!mission||mission.done||mission.failed) return;
+  const s=scores[currentChapter];
+  if (mission.type==='precision') {
+    mission.current=s.right.size;
+    const rem=cards.length-(s.right.size+s.wrong.size);
+    if (s.right.size+rem<mission.target) mission.failed=true;
+  } else if (mission.type==='combo') {
+    if (combo>mission.current) mission.current=combo;
+    if (!correct) { const rem=cards.length-(s.right.size+s.wrong.size); if (rem<mission.target) mission.failed=true; }
+  } else if (mission.type==='score') {
+    mission.current=sessionScore;
+  } else {
+    if (correct && timerRemaining>=timerSeconds*.4) mission.current++;
+  }
+  if (!mission.failed && mission.current>=mission.target) {
+    mission.done=true;
+    if (!missionSuccessShown) {
+      missionSuccessShown=true;
+      toast('🎯 Mission accomplie !','gold');
+      showBadgePopup({emoji:'🎯',title:'Mission accomplie !',sub:mission.label.replace(/<[^>]+>/g,''),id:'mission'});
+    }
+  }
+  renderMission();
+}
+function renderMission() {
+  const bar=document.getElementById('missionBar');
+  if (!mission) return;
+  bar.classList.remove('success','failed','close');
+  const pct=Math.min(100,Math.round(mission.current/mission.target*100));
+  let text=mission.label;
+  if (mission.done) { text=`✅ Accomplie — ${mission.label}`; bar.classList.add('success'); }
+  else if (mission.failed) { text=`❌ Impossible — ${mission.label.replace(/<[^>]+>/g,'')}`; bar.classList.add('failed'); }
+  else {
+    const rem=mission.target-mission.current;
+    if (rem===1) text+=` — <strong style="color:var(--accent)">Plus qu'un !</strong>`;
+    else if (pct>=75) bar.classList.add('close');
+  }
+  document.getElementById('missionIcon').textContent   = mission.icon;
+  document.getElementById('missionText').innerHTML     = text;
+  document.getElementById('missionFill').style.width   = pct+'%';
+  document.getElementById('missionLabel').textContent  = `${mission.current}/${mission.target}`;
+}
+
+/* ════════════════════════════════════════════════════
+   SCORE BAR
+════════════════════════════════════════════════════ */
+function updateScoreBar() {
+  const s = scores[currentChapter];
+  const u = cards.length - s.right.size - s.wrong.size;
+  const answered = s.right.size + s.wrong.size;
+  const successPct = answered ? Math.round(s.right.size / answered * 100) : 0;
+
+  // Footer "su / à revoir / non vu"
+  document.getElementById('scoreSummary').style.display = 'flex';
+  document.getElementById('scoreRight').textContent   = `${s.right.size} su`;
+  document.getElementById('scoreWrong').textContent   = `${s.wrong.size} à revoir`;
+  document.getElementById('scoreUnseen').textContent  = `${u} non vu`;
+
+  // Barre de progression session
+  const progPct = cards.length ? Math.round(answered / cards.length * 100) : 0;
+  document.getElementById('spLabel').textContent    = `${answered} / ${cards.length}`;
+  document.getElementById('spFill').style.width     = progPct + '%';
+  document.getElementById('spFill').className       = 'sp-bar-fill' + (successPct >= 90 ? ' good' : successPct >= 70 ? ' medium' : answered ? ' bad' : '');
+  document.getElementById('spPct').textContent      = answered ? successPct + '%' : '—';
+}
+
+/* ════════════════════════════════════════════════════
+   GAME OVER
+════════════════════════════════════════════════════ */
+function showGameOver() {
+  gameIsOver=true; stopTimer();
+  const s=scores[currentChapter];
+  document.getElementById('goRight').textContent=s.right.size;
+  document.getElementById('goWrong').textContent=s.wrong.size;
+  document.getElementById('goScore').textContent=sessionScore;
+  document.getElementById('goCombo').textContent=bestCombo;
+  document.getElementById('gameOver').classList.add('show');
+}
+function closeGameOver() { document.getElementById('gameOver').classList.remove('show'); resetChapter(); }
+
+/* ════════════════════════════════════════════════════
+   SESSION END
+════════════════════════════════════════════════════ */
+function showSessionEnd() {
+  stopTimer();
+  const s   = scores[currentChapter];
+  const answered = s.right.size + s.wrong.size;
+  const pct = answered ? Math.round(s.right.size / answered * 100) : 0;
+
+  // Message dynamique selon % de réussite
+  const msg = pct >= 90 ? '🏆 Maîtrisé !'
+            : pct >= 70 ? '👍 Correct mais fragile'
+            :              '⚠️ À revoir sérieusement';
+  const sub = pct >= 90 ? 'Excellente maîtrise du chapitre !'
+            : pct >= 70 ? 'Quelques définitions à consolider.'
+            :              'Revois les définitions et réessaie.';
+
+  document.getElementById('endTitle').textContent = msg;
+  document.getElementById('endSub').textContent   = sub;
+  document.getElementById('endRight').textContent = s.right.size;
+  document.getElementById('endWrong').textContent = s.wrong.size;
+  document.getElementById('endScore').textContent = sessionScore;
+  document.getElementById('endCombo').textContent = bestCombo;
+  document.getElementById('newBestBanner').style.display = 'none';
+
+  // Badges
+  const rack = document.getElementById('endBadges');
+  rack.innerHTML = earnedBadges.length
+    ? '<div style="margin-bottom:5px;color:var(--accent);font-weight:500">Badges obtenus :</div>'
+      + earnedBadges.map(id => { const d = BADGES.find(b => b.id === id); return d ? `<span style="margin:3px;display:inline-block">${d.emoji} ${d.title}</span>` : ''; }).join('')
+    : '';
+
+  // Bouton "Réviser mes erreurs"
+  const wrongCount = s.wrong.size;
+  document.getElementById('retryCount').textContent   = wrongCount;
+  document.getElementById('retryErrorsBtn').style.display = wrongCount > 0 ? 'block' : 'none';
+
+  document.getElementById('sessionEnd').classList.add('show');
+
+  // Effet visuel sur la card selon performance
+  const ovCard = document.querySelector('#sessionEnd .ov-card');
+  ovCard.classList.toggle('end-mastered', pct >= 90);
+
+  // Message d'encouragement si < 50%
+  const enc = document.getElementById('endEncouragement');
+  enc.textContent = pct < 50 ? '💪 Refais une session, tu peux largement mieux faire !' : '';
+}
+function closeSession() { document.getElementById('sessionEnd').classList.remove('show'); resetChapter(); }
+
+/* Relance une session uniquement avec les cartes ratées (mémoire JS uniquement) */
+function retryErrors() {
+  const wrongTerms = [...scores[currentChapter].wrong];
+  if (!wrongTerms.length) return;
+  document.getElementById('sessionEnd').classList.remove('show');
+  // Filtrer uniquement les cartes échouées
+  cards = DATA[currentChapter].cards.filter(c => wrongTerms.includes(c.term));
+  currentIndex = 0;
+  sessionScore = 0; combo = 0; bestCombo = 0; lives = 3; jokers = 2;
+  gameIsOver = false; earnedBadges = [];
+  scores[currentChapter] = { right: new Set(), wrong: new Set() };
+  document.getElementById('badgesRack').innerHTML = '';
+  toast(`🔁 ${cards.length} carte(s) à retravailler`, 'gold');
+  renderCard(); updateHUD(); updateScoreBar(); startMission();
+}
+
+/* ════════════════════════════════════════════════════
+   CONTROLS
+════════════════════════════════════════════════════ */
+function shuffleCards() {
+  stopTimer();
+  for (let i=cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]];}
+  currentIndex=0; renderCard();
+}
+function resetChapter() {
+  stopTimer(); sessionScore=0; combo=0; bestCombo=0; lives=3; jokers=2; gameIsOver=false; earnedBadges=[]; _prevLives=3;
+  scores[currentChapter]={right:new Set(),wrong:new Set()};
+  cards=[...DATA[currentChapter].cards]; currentIndex=0;
+  document.getElementById('badgesRack').innerHTML='';
+  renderCard(); updateHUD(); updateScoreBar(); startMission();
+}
+function setMode(m) {
+  mode=m;
+  document.getElementById('modeCard').classList.toggle('active',m==='card');
+  document.getElementById('modeList').classList.toggle('active',m==='list');
+  document.getElementById('cardMode').style.display   =m==='card'?'flex':'none';
+  document.getElementById('listMode').style.display   =m==='list'?'block':'none';
+  document.getElementById('scoreSummary').style.display=m==='card'?'flex':'none';
+  document.getElementById('timerWrap').style.display  =m==='card'?'block':'none';
+  if(m==='list'){stopTimer();renderList();} else if(!gameIsOver) startTimer();
+}
+function renderList() {
+  document.getElementById('listBody').innerHTML=cards.map(c=>`<tr><td>${c.term}</td><td>${c.definition}</td></tr>`).join('');
+}
+
+/* ════════════════════════════════════════════════════
+   KEYBOARD
+════════════════════════════════════════════════════ */
+document.addEventListener('keydown', e => {
+  if (mode!=='card'||gameIsOver) return;
+  if (e.key===' '||e.key==='Enter') { e.preventDefault(); flipCard(); }
+  if (e.key==='ArrowRight') skipCard();
+  if (e.key==='ArrowLeft')  prevCard();
+  if (e.key==='j'||e.key==='J') useJoker();
+  if (isFlipped) {
+    if (e.key==='ArrowUp'  ||e.key==='1') markCard(true);
+    if (e.key==='ArrowDown'||e.key==='2') markCard(false);
+  }
+});
+
+/* ════════════════════════════════════════════════════
+   HELPERS GAME FEEL
+════════════════════════════════════════════════════ */
+
+/* Flash rouge global lors d'une perte de vie */
+function triggerLifeFlash() {
+  const el = document.getElementById('lifeFlash');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 180);
+}
+
+/* Banner combo aux paliers 5/10/15/20 */
+let comboBannerTimer = null;
+function showComboBanner(c) {
+  const labels = { 5:'🔥 COMBO ×5 !', 10:'⚡ COMBO ×10 !', 15:'🌟 COMBO ×15 !', 20:'🏆 COMBO ×20 !' };
+  const el = document.getElementById('comboBanner');
+  el.textContent = labels[c] || `🔥 COMBO ×${c} !`;
+  el.classList.add('show');
+  clearTimeout(comboBannerTimer);
+  comboBannerTimer = setTimeout(() => el.classList.remove('show'), 1600);
+}
+
+/* Sons optionnels (Web Audio API — légers, sans fichier externe) */
+let audioCtx = null;
+const SOUNDS_ENABLED = true; // mettre false pour désactiver
+
+function playSound(type) {
+  if (!SOUNDS_ENABLED) return;
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc  = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    if (type === 'correct') {
+      osc.frequency.setValueAtTime(520, audioCtx.currentTime);
+      osc.frequency.linearRampToValueAtTime(780, audioCtx.currentTime + 0.12);
+      gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.2);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.2);
+    } else {
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      osc.frequency.linearRampToValueAtTime(120, audioCtx.currentTime + 0.15);
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.18);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.18);
+    }
+  } catch(e) { /* Son non supporté ou bloqué → silencieux */ }
+}
+
+init();
+
+/* ════════════════════════════════════════════════════
+   MASQUAGE LIGNE CLAVIER SUR APPAREILS TACTILES
+════════════════════════════════════════════════════ */
+(function() {
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isTouch) {
+    document.querySelectorAll('.htp-desktop').forEach(el => el.style.display = 'none');
+  }
+})();
+</script>
 </body>
 </html>
