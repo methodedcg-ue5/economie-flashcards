@@ -569,22 +569,30 @@ kbd {
   font-size: 1.45rem; color: var(--accent); margin-bottom: 5px;
 }
 .exam-sub { font-size: .8rem; color: var(--muted); margin-bottom: 24px; }
-.exam-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.exam-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
 .exam-btn {
-  padding: 14px 18px; border-radius: 14px;
+  padding: 12px 16px; border-radius: 12px;
   border: 2px solid var(--border); background: var(--surface2);
   cursor: pointer; transition: all .2s;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; gap: 12px;
   text-align: left; width: 100%;
 }
-.exam-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
-.exam-btn.selected { border-color: var(--accent); background: rgba(201,169,110,.1); }
-.exam-btn-left { display: flex; flex-direction: column; }
-.exam-btn-title { font-family: 'Playfair Display', serif; font-size: .95rem; color: var(--text); }
+.exam-btn:hover { border-color: var(--accent); }
+.exam-btn.selected { border-color: var(--accent); background: rgba(201,169,110,.08); }
+.exam-checkbox {
+  width: 18px; height: 18px; border-radius: 5px; flex-shrink: 0;
+  border: 2px solid var(--border); background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; transition: all .2s;
+}
+.exam-btn.selected .exam-checkbox { background: var(--accent); border-color: var(--accent); color: #0f0f13; }
+.exam-btn-left { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.exam-btn-title { font-family: 'Playfair Display', serif; font-size: .88rem; color: var(--text); }
 .exam-btn.selected .exam-btn-title { color: var(--accent); }
-.exam-btn-sub { font-size: .7rem; color: var(--muted); margin-top: 2px; }
-.exam-btn-badge { font-size: .72rem; color: var(--accent); background: rgba(201,169,110,.12); padding: 3px 9px; border-radius: 99px; white-space: nowrap; }
+.exam-btn-sub { font-size: .68rem; color: var(--muted); margin-top: 2px; }
+.exam-btn-badge { font-size: .7rem; color: var(--accent); background: rgba(201,169,110,.12); padding: 3px 8px; border-radius: 99px; white-space: nowrap; flex-shrink: 0; }
 .exam-divider { border: none; border-top: 1px solid var(--border); margin: 4px 0; }
+.exam-count { font-size: .75rem; color: var(--muted); margin-bottom: 14px; }
 .exam-launch {
   width: 100%; padding: 12px; border-radius: 12px; border: none;
   background: var(--accent); color: #0f0f13;
@@ -995,13 +1003,13 @@ kbd {
 <div id="examSelect">
   <div class="exam-card">
     <h2>🎓 Mode Examen</h2>
-    <p class="exam-sub">Révise plusieurs chapitres d'un coup, toutes les cartes mélangées</p>
+    <p class="exam-sub">Sélectionne les thèmes à réviser — les cartes seront mélangées</p>
 
-    <div class="exam-options" id="examOptions">
-      <!-- généré par JS -->
-    </div>
+    <div class="exam-options" id="examOptions"><!-- généré par JS --></div>
 
-    <p class="exam-sub" style="margin-bottom:12px;">Choix du mode de jeu</p>
+    <p class="exam-count" id="examCount">0 cartes sélectionnées</p>
+
+    <p class="exam-sub" style="margin-bottom:10px;">Mode de jeu</p>
     <div class="exam-mode-row">
       <button class="exam-mode-btn selected" id="examBtnRevision" onclick="selectExamMode('revision')">
         <span class="ms-icon">🧠</span>
@@ -1786,19 +1794,20 @@ function playSound(type) {
    MODE EXAMEN
 ════════════════════════════════════════════════════ */
 const THEMES_EXAM = [
-  { label: 'Thème 1 — Fondements de l\'économie',       chapters: [0,1],     color: '#c9a96e' },
-  { label: 'Thème 2 — Fonctionnement des marchés',      chapters: [2,3],     color: '#5ecb8a' },
-  { label: 'Thème 3 — Financement de l\'économie',      chapters: [4,5],     color: '#e06b6b' },
-  { label: 'Thème 4 — Croissance économique',           chapters: [6,7,8],   color: '#8b6fd4' },
-  { label: 'Thème 5 — Régulation publique',             chapters: [9,10,11], color: '#5aafd4' },
-  { label: 'Thème 6 — Déséquilibres sociaux',           chapters: [12,13,14],color: '#d46f8b' },
-  { label: 'Thème 7 — Mondialisation',                  chapters: [15,16,17],color: '#6fb86f' },
+  { label: 'Thème 1 — Fondements de l\'économie',       chapters: [0,1],      color: '#c9a96e' },
+  { label: 'Thème 2 — Fonctionnement des marchés',      chapters: [2,3],      color: '#5ecb8a' },
+  { label: 'Thème 3 — Financement de l\'économie',      chapters: [4,5],      color: '#e06b6b' },
+  { label: 'Thème 4 — Croissance économique',           chapters: [6,7,8],    color: '#8b6fd4' },
+  { label: 'Thème 5 — Régulation publique',             chapters: [9,10,11],  color: '#5aafd4' },
+  { label: 'Thème 6 — Déséquilibres sociaux',           chapters: [12,13,14], color: '#d46f8b' },
+  { label: 'Thème 7 — Mondialisation',                  chapters: [15,16,17], color: '#6fb86f' },
 ];
 
-let examSelection = 'all'; // 'all' | 0..6 (index thème)
-let examGameMode  = 'revision';
+let examSelectedThemes = new Set([0,1,2,3,4,5,6]); // tous cochés par défaut
+let examGameMode = 'revision';
 
 function openExamSelect() {
+  examSelectedThemes = new Set([0,1,2,3,4,5,6]);
   buildExamOptions();
   selectExamMode('revision');
   document.getElementById('examSelect').classList.add('show');
@@ -1811,52 +1820,97 @@ function selectExamMode(m) {
   document.getElementById('examBtnRevision').classList.toggle('selected', m === 'revision');
   document.getElementById('examBtnRapide').classList.toggle('selected', m === 'rapide');
 }
-function selectExamOption(val) {
-  examSelection = val;
-  document.querySelectorAll('.exam-btn').forEach(b => b.classList.remove('selected'));
-  document.getElementById('examOpt_' + val).classList.add('selected');
+
+function toggleAllThemes() {
+  if (examSelectedThemes.size === THEMES_EXAM.length) {
+    examSelectedThemes.clear();
+  } else {
+    THEMES_EXAM.forEach((_, i) => examSelectedThemes.add(i));
+  }
+  buildExamOptions();
 }
+
+function toggleTheme(i) {
+  if (examSelectedThemes.has(i)) {
+    examSelectedThemes.delete(i);
+  } else {
+    examSelectedThemes.add(i);
+  }
+  updateExamButtons();
+  updateExamCount();
+}
+
+function updateExamButtons() {
+  // Bouton "Tous"
+  const allSelected = examSelectedThemes.size === THEMES_EXAM.length;
+  const allBtn = document.getElementById('examOpt_all');
+  if (allBtn) {
+    allBtn.classList.toggle('selected', allSelected);
+    allBtn.querySelector('.exam-checkbox').textContent = allSelected ? '✓' : '';
+  }
+  // Boutons thèmes
+  THEMES_EXAM.forEach((_, i) => {
+    const btn = document.getElementById('examOpt_' + i);
+    if (btn) {
+      const sel = examSelectedThemes.has(i);
+      btn.classList.toggle('selected', sel);
+      btn.querySelector('.exam-checkbox').textContent = sel ? '✓' : '';
+    }
+  });
+}
+
+function updateExamCount() {
+  let total = 0;
+  examSelectedThemes.forEach(i => {
+    THEMES_EXAM[i].chapters.forEach(ci => total += DATA[ci].cards.length);
+  });
+  document.getElementById('examCount').textContent = total + ' cartes sélectionnées';
+}
+
 function buildExamOptions() {
-  const totalCards = DATA.reduce((s,ch) => s + ch.cards.length, 0);
+  const totalAll = DATA.reduce((s,ch) => s + ch.cards.length, 0);
+  const allSelected = examSelectedThemes.size === THEMES_EXAM.length;
   let html = `
-    <button class="exam-btn selected" id="examOpt_all" onclick="selectExamOption('all')">
+    <button class="exam-btn ${allSelected?'selected':''}" id="examOpt_all" onclick="toggleAllThemes()">
+      <div class="exam-checkbox">${allSelected?'✓':''}</div>
       <div class="exam-btn-left">
         <span class="exam-btn-title">📚 Tous les chapitres</span>
-        <span class="exam-btn-sub">18 chapitres mélangés</span>
+        <span class="exam-btn-sub">Cocher / décocher tous les thèmes</span>
       </div>
-      <span class="exam-btn-badge">${totalCards} cartes</span>
+      <span class="exam-btn-badge">${totalAll} cartes</span>
     </button>
     <hr class="exam-divider" />`;
   THEMES_EXAM.forEach((t, i) => {
     const count = t.chapters.reduce((s,ci) => s + DATA[ci].cards.length, 0);
+    const sel = examSelectedThemes.has(i);
     html += `
-    <button class="exam-btn" id="examOpt_${i}" onclick="selectExamOption(${i})">
+    <button class="exam-btn ${sel?'selected':''}" id="examOpt_${i}" onclick="toggleTheme(${i})">
+      <div class="exam-checkbox">${sel?'✓':''}</div>
       <div class="exam-btn-left">
-        <span class="exam-btn-title" style="color:${t.color}">${t.label}</span>
+        <span class="exam-btn-title" style="color:${sel?t.color:'var(--text)'}">${t.label}</span>
         <span class="exam-btn-sub">${t.chapters.length} chapitres</span>
       </div>
       <span class="exam-btn-badge">${count} cartes</span>
     </button>`;
   });
   document.getElementById('examOptions').innerHTML = html;
-  examSelection = 'all';
+  updateExamCount();
 }
+
 function launchExam() {
-  // Construire le pool de cartes
-  let pool = [];
-  if (examSelection === 'all') {
-    DATA.forEach(ch => pool.push(...ch.cards));
-  } else {
-    const t = THEMES_EXAM[examSelection];
-    t.chapters.forEach(ci => pool.push(...DATA[ci].cards));
+  if (examSelectedThemes.size === 0) {
+    toast('Sélectionne au moins un thème', 'red'); return;
   }
+  let pool = [];
+  examSelectedThemes.forEach(i => {
+    THEMES_EXAM[i].chapters.forEach(ci => pool.push(...DATA[ci].cards));
+  });
   // Mélanger
   for (let i = pool.length-1; i > 0; i--) {
     const j = Math.floor(Math.random()*(i+1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
   closeExamSelect();
-  // Lancer le jeu avec le pool
   gameMode = examGameMode;
   timerSeconds = gameMode === 'rapide' ? 5 : 8;
   document.getElementById('homePage').classList.add('hidden');
@@ -1865,15 +1919,15 @@ function launchExam() {
   const tag = document.getElementById('spModeTag');
   if (gameMode === 'rapide') { tag.textContent = '⚡ Rapide'; tag.className = 'sp-mode-tag rapide'; }
   else                       { tag.textContent = '🧠 Révision'; tag.className = 'sp-mode-tag'; }
-  // Injecter le pool dans une session spéciale
-  currentChapter = 0;
-  currentIndex = 0;
+  currentChapter = 0; currentIndex = 0;
   cards = pool;
   isFlipped = false; sessionScore = 0; combo = 0; bestCombo = 0;
   lives = 3; jokers = 2; gameIsOver = false; earnedBadges = []; _prevLives = 3;
   scores[0] = { right: new Set(), wrong: new Set() };
-  const label = examSelection === 'all' ? 'Mode Examen — Tous les chapitres' : THEMES_EXAM[examSelection].label;
-  document.getElementById('chapterTitleBar').textContent = '🎓 ' + label;
+  const label = examSelectedThemes.size === THEMES_EXAM.length
+    ? 'Tous les chapitres'
+    : [...examSelectedThemes].map(i => 'T'+(i+1)).join(', ');
+  document.getElementById('chapterTitleBar').textContent = '🎓 Mode Examen — ' + label;
   document.getElementById('badgesRack').innerHTML = '';
   updateHUD(); renderCard(); updateScoreBar(); startMission();
 }
