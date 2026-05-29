@@ -548,6 +548,70 @@ kbd {
 .ms-back:hover { color: var(--text); }
 
 /* ══════════════════════════════════════════════
+   MODE EXAMEN
+══════════════════════════════════════════════ */
+#examSelect {
+  position: fixed; inset: 0;
+  background: rgba(15,15,19,.95);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 350; opacity: 0; pointer-events: none; transition: opacity .3s;
+  overflow-y: auto; padding: 20px;
+}
+#examSelect.show { opacity: 1; pointer-events: all; }
+.exam-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 24px; padding: 36px 40px;
+  text-align: center; max-width: 520px; width: 100%;
+  box-shadow: var(--shadow);
+}
+.exam-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; color: var(--accent); margin-bottom: 5px;
+}
+.exam-sub { font-size: .8rem; color: var(--muted); margin-bottom: 24px; }
+.exam-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.exam-btn {
+  padding: 14px 18px; border-radius: 14px;
+  border: 2px solid var(--border); background: var(--surface2);
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: space-between;
+  text-align: left; width: 100%;
+}
+.exam-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.exam-btn.selected { border-color: var(--accent); background: rgba(201,169,110,.1); }
+.exam-btn-left { display: flex; flex-direction: column; }
+.exam-btn-title { font-family: 'Playfair Display', serif; font-size: .95rem; color: var(--text); }
+.exam-btn.selected .exam-btn-title { color: var(--accent); }
+.exam-btn-sub { font-size: .7rem; color: var(--muted); margin-top: 2px; }
+.exam-btn-badge { font-size: .72rem; color: var(--accent); background: rgba(201,169,110,.12); padding: 3px 9px; border-radius: 99px; white-space: nowrap; }
+.exam-divider { border: none; border-top: 1px solid var(--border); margin: 4px 0; }
+.exam-launch {
+  width: 100%; padding: 12px; border-radius: 12px; border: none;
+  background: var(--accent); color: #0f0f13;
+  font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500;
+  cursor: pointer; transition: opacity .15s; margin-bottom: 10px;
+}
+.exam-launch:hover { opacity: .85; }
+.exam-back {
+  background: none; border: none; color: var(--muted);
+  font-family: 'DM Sans', sans-serif; font-size: .76rem;
+  cursor: pointer; transition: color .15s;
+}
+.exam-back:hover { color: var(--text); }
+.exam-mode-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.exam-mode-btn {
+  padding: 12px 10px; border-radius: 12px;
+  border: 2px solid var(--border); background: var(--surface2);
+  cursor: pointer; transition: all .2s; text-align: center;
+}
+.exam-mode-btn:hover { border-color: var(--accent); }
+.exam-mode-btn.selected { border-color: var(--accent); background: rgba(201,169,110,.1); }
+.exam-mode-btn .ms-icon { font-size: 1.4rem; display: block; margin-bottom: 5px; }
+.exam-mode-btn .ms-title { font-family: 'Playfair Display', serif; font-size: .88rem; color: var(--text); display: block; }
+.exam-mode-btn.selected .ms-title { color: var(--accent); }
+.exam-mode-btn .ms-desc { font-size: .68rem; color: var(--muted); display: block; margin-top: 2px; }
+
+/* ══════════════════════════════════════════════
    BARRE DE PROGRESSION SESSION
 ══════════════════════════════════════════════ */
 #sessionProgress {
@@ -807,6 +871,9 @@ kbd {
 
   <!-- Grille chapitres -->
   <div class="home-section-title">Choisis un chapitre pour commencer</div>
+  <div style="text-align:center; margin-bottom: 8px;">
+    <button class="btn-nav" onclick="openExamSelect()" style="padding:10px 22px; border-color:var(--accent); color:var(--accent); font-size:.85rem;">🎓 Mode Examen — tous les chapitres ou par thème</button>
+  </div>
   <div class="chapters-grid" id="chaptersGrid"></div>
 
 </div>
@@ -921,6 +988,35 @@ kbd {
       <div class="score-item"><div class="sdot" style="background:var(--red)"></div><span id="scoreWrong">0 à revoir</span></div>
       <div class="score-item"><div class="sdot" style="background:var(--border)"></div><span id="scoreUnseen">0 non vu</span></div>
     </div>
+  </div>
+</div>
+
+<!-- MODE EXAMEN -->
+<div id="examSelect">
+  <div class="exam-card">
+    <h2>🎓 Mode Examen</h2>
+    <p class="exam-sub">Révise plusieurs chapitres d'un coup, toutes les cartes mélangées</p>
+
+    <div class="exam-options" id="examOptions">
+      <!-- généré par JS -->
+    </div>
+
+    <p class="exam-sub" style="margin-bottom:12px;">Choix du mode de jeu</p>
+    <div class="exam-mode-row">
+      <button class="exam-mode-btn selected" id="examBtnRevision" onclick="selectExamMode('revision')">
+        <span class="ms-icon">🧠</span>
+        <span class="ms-title">Révision</span>
+        <span class="ms-desc">Timer 8s · 3 vies</span>
+      </button>
+      <button class="exam-mode-btn" id="examBtnRapide" onclick="selectExamMode('rapide')">
+        <span class="ms-icon">⚡</span>
+        <span class="ms-title">Rapide</span>
+        <span class="ms-desc">Timer 5s · 3 vies</span>
+      </button>
+    </div>
+
+    <button class="exam-launch" onclick="launchExam()">Lancer le mode examen</button>
+    <button class="exam-back" onclick="closeExamSelect()">← Retour</button>
   </div>
 </div>
 
@@ -1684,6 +1780,102 @@ function playSound(type) {
       osc.start(); osc.stop(audioCtx.currentTime + 0.18);
     }
   } catch(e) { /* Son non supporté ou bloqué → silencieux */ }
+}
+
+/* ════════════════════════════════════════════════════
+   MODE EXAMEN
+════════════════════════════════════════════════════ */
+const THEMES_EXAM = [
+  { label: 'Thème 1 — Fondements de l\'économie',       chapters: [0,1],     color: '#c9a96e' },
+  { label: 'Thème 2 — Fonctionnement des marchés',      chapters: [2,3],     color: '#5ecb8a' },
+  { label: 'Thème 3 — Financement de l\'économie',      chapters: [4,5],     color: '#e06b6b' },
+  { label: 'Thème 4 — Croissance économique',           chapters: [6,7,8],   color: '#8b6fd4' },
+  { label: 'Thème 5 — Régulation publique',             chapters: [9,10,11], color: '#5aafd4' },
+  { label: 'Thème 6 — Déséquilibres sociaux',           chapters: [12,13,14],color: '#d46f8b' },
+  { label: 'Thème 7 — Mondialisation',                  chapters: [15,16,17],color: '#6fb86f' },
+];
+
+let examSelection = 'all'; // 'all' | 0..6 (index thème)
+let examGameMode  = 'revision';
+
+function openExamSelect() {
+  buildExamOptions();
+  selectExamMode('revision');
+  document.getElementById('examSelect').classList.add('show');
+}
+function closeExamSelect() {
+  document.getElementById('examSelect').classList.remove('show');
+}
+function selectExamMode(m) {
+  examGameMode = m;
+  document.getElementById('examBtnRevision').classList.toggle('selected', m === 'revision');
+  document.getElementById('examBtnRapide').classList.toggle('selected', m === 'rapide');
+}
+function selectExamOption(val) {
+  examSelection = val;
+  document.querySelectorAll('.exam-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('examOpt_' + val).classList.add('selected');
+}
+function buildExamOptions() {
+  const totalCards = DATA.reduce((s,ch) => s + ch.cards.length, 0);
+  let html = `
+    <button class="exam-btn selected" id="examOpt_all" onclick="selectExamOption('all')">
+      <div class="exam-btn-left">
+        <span class="exam-btn-title">📚 Tous les chapitres</span>
+        <span class="exam-btn-sub">18 chapitres mélangés</span>
+      </div>
+      <span class="exam-btn-badge">${totalCards} cartes</span>
+    </button>
+    <hr class="exam-divider" />`;
+  THEMES_EXAM.forEach((t, i) => {
+    const count = t.chapters.reduce((s,ci) => s + DATA[ci].cards.length, 0);
+    html += `
+    <button class="exam-btn" id="examOpt_${i}" onclick="selectExamOption(${i})">
+      <div class="exam-btn-left">
+        <span class="exam-btn-title" style="color:${t.color}">${t.label}</span>
+        <span class="exam-btn-sub">${t.chapters.length} chapitres</span>
+      </div>
+      <span class="exam-btn-badge">${count} cartes</span>
+    </button>`;
+  });
+  document.getElementById('examOptions').innerHTML = html;
+  examSelection = 'all';
+}
+function launchExam() {
+  // Construire le pool de cartes
+  let pool = [];
+  if (examSelection === 'all') {
+    DATA.forEach(ch => pool.push(...ch.cards));
+  } else {
+    const t = THEMES_EXAM[examSelection];
+    t.chapters.forEach(ci => pool.push(...DATA[ci].cards));
+  }
+  // Mélanger
+  for (let i = pool.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  closeExamSelect();
+  // Lancer le jeu avec le pool
+  gameMode = examGameMode;
+  timerSeconds = gameMode === 'rapide' ? 5 : 8;
+  document.getElementById('homePage').classList.add('hidden');
+  document.getElementById('gameHeader').style.display = 'flex';
+  document.getElementById('gameApp').style.display    = 'flex';
+  const tag = document.getElementById('spModeTag');
+  if (gameMode === 'rapide') { tag.textContent = '⚡ Rapide'; tag.className = 'sp-mode-tag rapide'; }
+  else                       { tag.textContent = '🧠 Révision'; tag.className = 'sp-mode-tag'; }
+  // Injecter le pool dans une session spéciale
+  currentChapter = 0;
+  currentIndex = 0;
+  cards = pool;
+  isFlipped = false; sessionScore = 0; combo = 0; bestCombo = 0;
+  lives = 3; jokers = 2; gameIsOver = false; earnedBadges = []; _prevLives = 3;
+  scores[0] = { right: new Set(), wrong: new Set() };
+  const label = examSelection === 'all' ? 'Mode Examen — Tous les chapitres' : THEMES_EXAM[examSelection].label;
+  document.getElementById('chapterTitleBar').textContent = '🎓 ' + label;
+  document.getElementById('badgesRack').innerHTML = '';
+  updateHUD(); renderCard(); updateScoreBar(); startMission();
 }
 
 init();
